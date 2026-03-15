@@ -106,7 +106,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
 .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); }
 .mobile-menu {
   position: fixed; top: 0; right: -100%;
-  width: 280px; height: 100vh;
+  width: 280px; height: 100dvh;
   background: var(--bg-mid);
   border-left: 1px solid var(--border);
   z-index: 200;
@@ -695,7 +695,8 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
   .hero-content { padding: 0 1.5rem; }
   .hero-headline { font-size: clamp(3.5rem, 16vw, 7rem); }
   .hero-scroll-hint { left: 1.5rem; }
-  #scroll-container { height: 500vh; }
+  #scroll-container { height: 350vh; }
+  body { overscroll-behavior: auto; }
   .align-left .section-inner, .align-right .section-inner { padding: 0 5vw; }
   .stats-inner { grid-template-columns: 1fr; gap: 2rem; }
   .why-grid { grid-template-columns: 1fr; }

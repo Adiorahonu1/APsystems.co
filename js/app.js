@@ -96,6 +96,11 @@ async function preloadFrames(onComplete) {
 
 /* ── LENIS ───────────────────────────────────────────────────── */
 function initLenis() {
+  const isMobile = window.matchMedia('(pointer: coarse)').matches;
+  if (isMobile) {
+    window.addEventListener('scroll', ScrollTrigger.update, { passive: true });
+    return;
+  }
   try {
     if (typeof Lenis === 'undefined') throw new Error('not loaded');
     lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
@@ -201,12 +206,27 @@ function initSectionAnimations() {
 /* ── HERO + OVERLAYS ─────────────────────────────────────────
    Merged into ONE scrubbed trigger (was 2 separate).
    Hero updates stop once fully hidden (saves transform/opacity writes).
+   On mobile: simple enter/leave callbacks — no scrub, no per-tick writes.
    ─────────────────────────────────────────────────────────── */
 function initScrollEffects() {
   const container = document.getElementById('scroll-container');
   const hero      = document.getElementById('hero');
   const overlay   = document.getElementById('dark-overlay');
   const accent    = document.getElementById('accent-overlay');
+  const isMobile  = window.matchMedia('(pointer: coarse)').matches;
+
+  if (isMobile) {
+    hero.style.transition = 'opacity 0.3s ease';
+    ScrollTrigger.create({
+      trigger: container,
+      start:   'top top',
+      end:     '8% top',
+      onLeave:      () => { hero.style.opacity = '0'; },
+      onEnterBack:  () => { hero.style.opacity = '1'; },
+    });
+    return;
+  }
+
   const E = 0.55, L = 0.70, F = 0.04;
   let heroHidden  = false;
 
@@ -219,7 +239,7 @@ function initScrollEffects() {
 
       // Hero — stop writing styles once it's gone
       if (p < 0.07) {
-        if (heroHidden) { hero.style.cssText = ''; heroHidden = false; }
+        if (heroHidden) { hero.style.cssText = ''; hero.style.transition = ''; heroHidden = false; }
         hero.style.opacity   = Math.max(0, 1 - p * 18);
         hero.style.transform = `translateY(${-p * 40}px)`;
       } else if (!heroHidden) {
@@ -241,6 +261,14 @@ function initScrollEffects() {
 
 /* ── FRAME SCROLL — synchronous draw, zero seek lag ─────────── */
 function initFrameScroll() {
+  const isMobile = window.matchMedia('(pointer: coarse)').matches;
+  if (isMobile) {
+    // On mobile: static mid-sequence frame — no per-scroll redraws
+    const staticIdx = Math.min(Math.floor(FRAME_COUNT * 0.4), FRAME_COUNT - 1);
+    drawFrame(staticIdx);
+    currentFrame = staticIdx;
+    return;
+  }
   const container = document.getElementById('scroll-container');
   ScrollTrigger.create({
     trigger:  container,
