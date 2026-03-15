@@ -119,8 +119,8 @@ function buildTimeline(anim, children) {
   const b  = { stagger: 0.1, duration: 0.8, ease: 'power3.out' };
   if      (anim === 'stagger-up')  tl.from(children, { y: 50, opacity: 0, stagger: 0.12, duration: 0.8, ease: 'power3.out' });
   else if (anim === 'fade-up')     tl.from(children, { y: 40, opacity: 0, ...b });
-  else if (anim === 'slide-right') tl.from(children, { x: -60, opacity: 0, ...b });
-  else if (anim === 'slide-left')  tl.from(children, { x:  60, opacity: 0, ...b });
+  else if (anim === 'slide-right') tl.from(children, { x: -60, opacity: 0, stagger: 0, duration: 0.8, ease: 'power3.out' });
+  else if (anim === 'slide-left')  tl.from(children, { x:  60, opacity: 0, stagger: 0, duration: 0.8, ease: 'power3.out' });
   else if (anim === 'scale-up')    tl.from(children, { scale: 0.9, opacity: 0, stagger: 0.1, duration: 0.9, ease: 'power2.out' });
   else if (anim === 'clip-reveal') tl.from(children, { clipPath: 'inset(100% 0 0 0)', opacity: 0, stagger: 0.12, duration: 1.0, ease: 'power4.inOut' });
   else                             tl.from(children, { opacity: 0, ...b });
