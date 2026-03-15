@@ -263,10 +263,20 @@ function initScrollEffects() {
 function initFrameScroll() {
   const isMobile = window.matchMedia('(pointer: coarse)').matches;
   if (isMobile) {
-    // On mobile: static mid-sequence frame — no per-scroll redraws
-    const staticIdx = Math.min(Math.floor(FRAME_COUNT * 0.4), FRAME_COUNT - 1);
-    drawFrame(staticIdx);
-    currentFrame = staticIdx;
+    // On mobile: auto-play frames like a looping video at ~24fps
+    let mobileFrame = 0;
+    let lastTime = 0;
+    const FPS = 24;
+    const interval = 1000 / FPS;
+    function playFrames(timestamp) {
+      if (timestamp - lastTime >= interval) {
+        lastTime = timestamp;
+        drawFrame(mobileFrame);
+        mobileFrame = (mobileFrame + 1) % FRAME_COUNT;
+      }
+      requestAnimationFrame(playFrames);
+    }
+    requestAnimationFrame(playFrames);
     return;
   }
   const container = document.getElementById('scroll-container');
