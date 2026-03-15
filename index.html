@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP Systems — Built to Turn Leads Into Booked Appointments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ─── LOADER ─────────────────────────────────────────────── -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">AP <span>SYSTEMS</span></div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <div class="loader-status">INITIALISING SYSTEM</div>
+    </div>
+  </div>
+
+  <!-- ─── NAV ───────────────────────────────────────────────── -->
+  <nav id="main-nav">
+    <a href="#" class="nav-logo">AP <span>SYSTEMS</span></a>
+    <div class="nav-links">
+      <a href="#offers">Systems</a>
+      <a href="#how-it-works">Process</a>
+      <a href="#proof">Results</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#offers">Our Systems</a>
+    <a href="#how-it-works">Process</a>
+    <a href="#proof">Results</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="mobile-cta">Book a Free Call</a>
+  </div>
+
+  <!-- ─── HERO ──────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span>AI LEAD GENERATION &amp; AUTOMATION</span>
+        <span class="eyebrow-line"></span>
+      </div>
+      <h1 class="hero-headline">
+        <span class="line line-1">YOUR PIPELINE.</span>
+        <span class="line line-2">AUTOMATED.</span>
+      </h1>
+      <p class="hero-sub">We build AI systems that generate new leads and recover missed opportunities — so your pipeline fills and your revenue grows automatically.</p>
+      <div class="hero-systems-intro">
+        <span class="sys-pill sys-pill--cyan">AI Lead Gen Engine</span>
+        <span class="sys-divider">+</span>
+        <span class="sys-pill sys-pill--magenta">Pipeline Recovery Engine</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary">Book a Strategy Call</a>
+        <a href="#offers" class="btn-ghost">See Both Systems →</a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-item"><span class="trust-icon">✓</span> Custom-built systems</span>
+        <span class="trust-item"><span class="trust-icon">✓</span> Full CRM integration</span>
+        <span class="trust-item"><span class="trust-icon">✓</span> Done-for-you setup</span>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ─── CANVAS LAYER (fixed) ──────────────────────────────── -->
+  <canvas id="main-canvas"></canvas>
+  <div id="dark-overlay"></div>
+  <div id="accent-overlay"></div>
+
+  <!-- ─── MARQUEE (fixed) ───────────────────────────────────── -->
+  <div id="marquee-wrap">
+    <div id="marquee-track">
+      <span>AI LEAD GEN · QUALIFY · AUTOMATE · CONVERT · RECOVER · SCALE · AI LEAD GEN · QUALIFY · AUTOMATE · CONVERT · RECOVER · SCALE ·</span>
+    </div>
+  </div>
+
+  <!-- ─── SCROLL CONTAINER ──────────────────────────────────── -->
+  <div id="scroll-container">
+
+    <!-- Section 1: Problem — enter 8%, leave 28% -->
+    <section class="scroll-section section-content align-left"
+             data-enter="8" data-leave="28" data-animation="slide-right">
+      <div class="section-inner">
+        <div class="section-tag">01 / THE PROBLEM</div>
+        <h2 class="section-headline">YOUR LEADS<br>ARE LEAKING.</h2>
+        <div class="pain-list">
+          <div class="pain-item"><span class="pain-num">01</span><p>Leads going cold after first contact — before anyone follows up.</p></div>
+          <div class="pain-item"><span class="pain-num">02</span><p>Manual follow-up eating your team's time on unqualified prospects.</p></div>
+          <div class="pain-item"><span class="pain-num">03</span><p>No system to qualify leads before they land on your calendar.</p></div>
+          <div class="pain-item"><span class="pain-num">04</span><p>Wasted ad spend from poor nurture and slow response times.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Solution — enter 30%, leave 52% -->
+    <section class="scroll-section section-content align-right"
+             data-enter="30" data-leave="52" data-animation="slide-left">
+      <div class="section-inner">
+        <div class="section-tag">02 / THE SOLUTION</div>
+        <h2 class="section-headline">THE AI<br>LEAD ENGINE.</h2>
+        <p class="section-body">We build custom AI systems that run your entire lead journey — from first touch to booked appointment — without manual effort.</p>
+        <div class="pillar-grid">
+          <div class="pillar"><div class="pillar-icon">◈</div><span>Capture</span></div>
+          <div class="pillar"><div class="pillar-icon">◈</div><span>Qualify</span></div>
+          <div class="pillar"><div class="pillar-icon">◈</div><span>Follow Up</span></div>
+          <div class="pillar"><div class="pillar-icon">◈</div><span>Book</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Stats — enter 55%, leave 75% -->
+    <section class="scroll-section section-stats"
+             data-enter="55" data-leave="75" data-animation="stagger-up">
+      <div class="section-inner stats-inner">
+        <div class="stat-card">
+          <div class="stat-value"><span class="stat-number" data-value="3" data-decimals="0">0</span>×</div>
+          <div class="stat-label">Faster Lead Response</div>
+          <div class="stat-context">vs. manual follow-up</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value"><span class="stat-number" data-value="40" data-decimals="0">0</span>%</div>
+          <div class="stat-label">More Qualified Appointments</div>
+          <div class="stat-context">from the same pipeline</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value"><span class="stat-number" data-value="30" data-decimals="0">0</span>+</div>
+          <div class="stat-label">Bookings Generated</div>
+          <div class="stat-context">for Life Changers FS in weeks</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Canvas CTA — enter 82%, leave 100% -->
+    <section class="scroll-section section-cta-canvas"
+             data-enter="82" data-leave="100" data-animation="scale-up" data-persist="true">
+      <div class="section-inner cta-inner">
+        <div class="cta-tag">READY TO SCALE?</div>
+        <h2 class="cta-headline">STOP LOSING<br>LEADS.</h2>
+        <p class="cta-sub">One strategy call. We'll map exactly how your AI lead engine should work — and show you what's possible.</p>
+        <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary btn-large">Book a Strategy Call</a>
+      </div>
+    </section>
+
+  </div><!-- /#scroll-container -->
+
+  <!-- ─── POST-SCROLL STATIC SECTIONS ───────────────────────── -->
+
+  <!-- Trust Strip -->
+  <section class="trust-strip" id="trust">
+    <div class="container">
+      <p class="trust-label">AUTOMATION SYSTEMS BUILT FOR GROWTH-FOCUSED BUSINESSES</p>
+      <div class="trust-logos">
+        <div class="trust-pill">Insurance Agencies</div>
+        <div class="trust-pill">Financial Advisors</div>
+        <div class="trust-pill">Local Service Businesses</div>
+        <div class="trust-pill">Agency Owners</div>
+        <div class="trust-pill">B2B Consultants</div>
+        <div class="trust-pill">SaaS Founders</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TWO-OFFER SECTION ──────────────────────────────────── -->
+  <section class="offers-section" id="offers">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag-static">TWO SYSTEMS. ONE GOAL.</div>
+        <h2 class="section-title">Two Systems.<br>More Booked Revenue.</h2>
+        <p class="section-intro">Whether you need a steady flow of new qualified leads — or you need to recover the revenue sitting in your existing pipeline — we build the exact system your situation demands.</p>
+      </div>
+      <div class="offers-grid">
+
+        <!-- Offer 1: AI Lead Gen Engine -->
+        <div class="offer-card reveal-up" data-offer="1">
+          <div class="offer-badge">01</div>
+          <h3 class="offer-title">AI Lead Gen Engine</h3>
+          <p class="offer-tagline">Generate and convert new leads — automatically.</p>
+          <div class="offer-best-for">
+            <span class="offer-best-label">BEST FOR</span>
+            <span>Businesses that need consistent new opportunities entering the pipeline every week.</span>
+          </div>
+          <ul class="offer-components">
+            <li><span class="offer-arrow">→</span>AI lead capture &amp; outreach automation</li>
+            <li><span class="offer-arrow">→</span>Intelligent lead qualification flows</li>
+            <li><span class="offer-arrow">→</span>Multi-touch automated follow-up sequences</li>
+            <li><span class="offer-arrow">→</span>Appointment booking automation</li>
+            <li><span class="offer-arrow">→</span>CRM integration &amp; pipeline routing</li>
+            <li><span class="offer-arrow">→</span>Speed-to-lead response systems</li>
+          </ul>
+          <div class="offer-outcome">
+            <span class="offer-outcome-label">OUTCOME</span>
+            <span>More qualified conversations entering your calendar — without manual effort.</span>
+          </div>
+          <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary">Book a Strategy Call →</a>
+        </div>
+
+        <!-- Offer 2: Pipeline Recovery Engine -->
+        <div class="offer-card reveal-up" data-offer="2">
+          <div class="offer-badge">02</div>
+          <h3 class="offer-title">Pipeline Recovery Engine</h3>
+          <p class="offer-tagline">Recover revenue from leads you already have.</p>
+          <div class="offer-best-for">
+            <span class="offer-best-label">BEST FOR</span>
+            <span>Businesses with existing leads, inquiries, or past clients — but inconsistent or broken follow-up.</span>
+          </div>
+          <ul class="offer-components">
+            <li><span class="offer-arrow offer-arrow--magenta">→</span>Old lead reactivation campaigns</li>
+            <li><span class="offer-arrow offer-arrow--magenta">→</span>Missed-call instant text-back system</li>
+            <li><span class="offer-arrow offer-arrow--magenta">→</span>Dormant pipeline nurture sequences</li>
+            <li><span class="offer-arrow offer-arrow--magenta">→</span>Renewal &amp; re-engagement automations</li>
+            <li><span class="offer-arrow offer-arrow--magenta">→</span>Automated booking for warm leads</li>
+            <li><span class="offer-arrow offer-arrow--magenta">→</span>CRM lead routing &amp; cleanup</li>
+          </ul>
+          <div class="offer-outcome offer-outcome--magenta">
+            <span class="offer-outcome-label">OUTCOME</span>
+            <span>Revenue recovered from leads already in your pipeline — not new ad spend.</span>
+          </div>
+          <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary btn-secondary">Book a Strategy Call →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GUARANTEE SECTION ──────────────────────────────────── -->
+  <section class="guarantee-section" id="guarantee">
+    <div class="container">
+      <div class="guarantee-inner reveal-up">
+        <div class="guarantee-icon">◈</div>
+        <div class="guarantee-tag">DELIVERY GUARANTEE</div>
+        <h3 class="guarantee-title">We Don't Stop<br>Until It's Live.</h3>
+        <p class="guarantee-body">Every project begins with a clearly defined scope and delivery milestones agreed before work starts. If we fail to complete the agreed system build, we continue working — at no additional labour cost — until every milestone is delivered.</p>
+        <div class="guarantee-points">
+          <div class="guarantee-point"><span class="g-check">✓</span><span>Defined scope before we start</span></div>
+          <div class="guarantee-point"><span class="g-check">✓</span><span>Clear delivery milestones</span></div>
+          <div class="guarantee-point"><span class="g-check">✓</span><span>No extra cost if we miss a deadline</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS (STATIC) ─────────────────────────────── -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag-static">THE PROCESS</div>
+        <h2 class="section-title">How We Turn Strangers<br>Into Booked Appointments</h2>
+      </div>
+      <div class="how-grid">
+        <div class="how-step reveal-up">
+          <div class="how-num">01</div>
+          <h4>Get In Front of the Right People</h4>
+          <p>We drive targeted attention to your business using the channels that work for your market — organic content, search, paid ads, or outreach. You show up where your ideal clients are already looking.</p>
+        </div>
+        <div class="how-step reveal-up">
+          <div class="how-num">02</div>
+          <h4>Every Lead Gets Captured Automatically</h4>
+          <p>When someone shows interest, the system captures, organises, and tracks them instantly. No spreadsheets, no missed DMs, no forgotten enquiries. Every lead is logged the moment they raise their hand.</p>
+        </div>
+        <div class="how-step reveal-up">
+          <div class="how-num">03</div>
+          <h4>AI Books the Appointment For You</h4>
+          <p>Your AI system qualifies each lead and schedules them directly into your calendar — 24 hours a day, 7 days a week. No back-and-forth. No chasing. Just confirmed appointments waiting for you.</p>
+        </div>
+        <div class="how-step reveal-up">
+          <div class="how-num">04</div>
+          <h4>More Automation. More Value.</h4>
+          <p>Once the core system is running, we build additional automations tailored to your business — follow-ups, reminders, CRM updates, and more — so everything works together without you lifting a finger.</p>
+        </div>
+      </div>
+
+      <!-- Traffic Sources -->
+      <div class="traffic-sources reveal-up">
+        <div class="traffic-sources-header">
+          <h3>Where Your Leads Come From</h3>
+          <p>We use a mix of organic and paid channels depending on your market, budget, and goals.</p>
+        </div>
+        <div class="traffic-grid">
+
+          <div class="traffic-card traffic-card--organic">
+            <div class="traffic-card-label">ORGANIC</div>
+            <div class="traffic-card-note">Builds over time. Compounds as it grows.</div>
+            <ul class="traffic-list">
+              <li><span class="t-arrow">→</span><span>Content on YouTube, Instagram &amp; Facebook</span></li>
+              <li><span class="t-arrow">→</span><span>Email campaigns to your existing audience</span></li>
+              <li><span class="t-arrow">→</span><span>Search Engine Optimisation (SEO)</span></li>
+              <li><span class="t-arrow">→</span><span>Cold outreach via email, DM, or phone</span></li>
+            </ul>
+          </div>
+
+          <div class="traffic-card traffic-card--paid">
+            <div class="traffic-card-label">PAID</div>
+            <div class="traffic-card-note">Faster results. More control over volume.</div>
+            <ul class="traffic-list">
+              <li><span class="t-arrow">→</span><span>Meta Ads — Facebook &amp; Instagram <span class="t-note">(best starting point)</span></span></li>
+              <li><span class="t-arrow">→</span><span>Google Ads</span></li>
+              <li><span class="t-arrow">→</span><span>YouTube Ads</span></li>
+              <li><span class="t-arrow">→</span><span>TikTok Ads</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── CASE STUDIES / PROOF ───────────────────────────────── -->
+  <section class="proof-section" id="proof">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag-static">CLIENT RESULTS</div>
+        <h2 class="section-title">Systems That Delivered<br>Real Revenue</h2>
+        <p class="section-intro">Real results from real clients. Not projections. Not promises.</p>
+      </div>
+      <div class="proof-grid">
+
+        <!-- Case Study 1: Life Changers FS -->
+        <div class="proof-card reveal-up">
+          <div class="proof-client">
+            <div class="proof-client-logo">LIFE CHANGERS FS LLC</div>
+            <div class="proof-client-name">Blessing — Life Changers FS LLC</div>
+          </div>
+          <div class="proof-stat">30+</div>
+          <div class="proof-stat-label">BOOKED CONVERSATIONS GENERATED</div>
+          <div class="proof-story">
+            <div class="proof-story-item">
+              <span class="proof-story-label">THE PROBLEM</span>
+              <p>Strong inbound interest but no automated system to capture, qualify, and book leads at scale. Opportunities were slipping through the cracks daily.</p>
+            </div>
+            <div class="proof-story-item">
+              <span class="proof-story-label">SYSTEM BUILT</span>
+              <p>AI lead qualification flow + automated follow-up sequences + appointment booking automation — fully connected to her CRM.</p>
+            </div>
+            <div class="proof-story-item">
+              <span class="proof-story-label">THE RESULT</span>
+              <p>Within weeks of deploying the system, the pipeline generated 30+ booked conversations. Blessing became a continuing client.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 2: Ecommerce Growth -->
+        <div class="proof-card proof-card--secondary reveal-up">
+          <div class="proof-client">
+            <div class="proof-client-logo proof-logo--magenta">ECOM GROWTH</div>
+            <div class="proof-client-name">Ecommerce Growth — Automation Case</div>
+          </div>
+          <div class="proof-stats-row">
+            <div class="proof-mini-stat">
+              <div class="proof-mini-num">$100k+</div>
+              <div class="proof-mini-label">Revenue Generated</div>
+            </div>
+            <div class="proof-mini-stat">
+              <div class="proof-mini-num">20k+</div>
+              <div class="proof-mini-label">Followers Built</div>
+            </div>
+            <div class="proof-mini-stat">
+              <div class="proof-mini-num">40M+</div>
+              <div class="proof-mini-label">TikTok Views</div>
+            </div>
+          </div>
+          <div class="proof-story">
+            <div class="proof-story-item">
+              <span class="proof-story-label">SYSTEM BUILT</span>
+              <p>Automation systems combining content-driven lead capture, qualified audience targeting, and revenue-focused conversion flows across channels.</p>
+            </div>
+            <div class="proof-story-item">
+              <span class="proof-story-label">THE RESULT</span>
+              <p>A fully systematised growth engine that generated over $100k in revenue, built a 20k+ following, and reached 40M+ views — driven by automation, not manual effort.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="proof-cta reveal-up">
+        <p class="proof-cta-note">Ready to see what a system like this could do for your pipeline?</p>
+        <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary btn-large">Book a Free Strategy Call →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICES GRID ──────────────────────────────────────── -->
+  <section class="services-section" id="services-detail">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag-static">WHAT WE BUILD</div>
+        <h2 class="section-title">Systems That Replace<br>Manual Work</h2>
+        <p class="section-intro">Every system is custom-built around your workflow. No off-the-shelf tools. No generic setups.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card reveal-up">
+          <div class="svc-number">01</div>
+          <div class="svc-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 24h8M28 24h8M24 12v8M24 28v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="4" fill="currentColor" opacity=".3"/>
+            </svg>
+          </div>
+          <h3>AI Lead Generation</h3>
+          <p>Automated outreach systems that attract and capture qualified leads from multiple channels simultaneously.</p>
+          <div class="svc-outcome">Outcome: More leads. Less ad waste.</div>
+        </div>
+        <div class="svc-card reveal-up">
+          <div class="svc-number">02</div>
+          <div class="svc-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="14" width="32" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 22l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 30l8 8M40 30l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
+            </svg>
+          </div>
+          <h3>AI Appointment Booking</h3>
+          <p>Intelligent scheduling automation that books qualified prospects directly into your calendar without back-and-forth.</p>
+          <div class="svc-outcome">Outcome: Full calendar. Zero scheduling friction.</div>
+        </div>
+        <div class="svc-card reveal-up">
+          <div class="svc-number">03</div>
+          <div class="svc-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 16l16-8 16 8v16l-16 8L8 32V16z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 16l16 8m0 0l16-8M24 24v16" stroke="currentColor" stroke-width="1.5" opacity=".4"/>
+            </svg>
+          </div>
+          <h3>Lead Qualification Engine</h3>
+          <p>AI-powered qualification flows that score, segment, and route leads based on your exact ideal client profile.</p>
+          <div class="svc-outcome">Outcome: Only qualified leads reach your team.</div>
+        </div>
+        <div class="svc-card reveal-up">
+          <div class="svc-number">04</div>
+          <div class="svc-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="24" r="5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="36" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="36" cy="36" r="5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M17 22l14-8M17 26l14 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+            </svg>
+          </div>
+          <h3>CRM + Follow-Up Automation</h3>
+          <p>Automated multi-touch follow-up sequences that nurture leads through your pipeline with perfect timing.</p>
+          <div class="svc-outcome">Outcome: No lead slips through the cracks.</div>
+        </div>
+        <div class="svc-card reveal-up">
+          <div class="svc-number">05</div>
+          <div class="svc-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="6" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="28" y="6" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="6" y="28" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="28" y="28" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20 13h8M13 20v8M35 20v8M20 35h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+            </svg>
+          </div>
+          <h3>Custom Workflow Integration</h3>
+          <p>We connect your entire tech stack — CRM, email, SMS, calendar, ads — into one seamless automated system.</p>
+          <div class="svc-outcome">Outcome: All your tools work as one.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHY US ─────────────────────────────────────────────── -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-left reveal-up">
+          <div class="section-tag-static">WHY AP SYSTEMS</div>
+          <h2 class="section-title">We Build Systems.<br>Not Promises.</h2>
+          <p>Most agencies hand you a blueprint and disappear. We stay until your automation is live, tested, and generating results.</p>
+          <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary" style="margin-top:2rem;display:inline-block;">Get Started →</a>
+        </div>
+        <div class="why-right">
+          <div class="why-item reveal-up">
+            <div class="why-check">✓</div>
+            <div>
+              <strong>Custom, Not Cookie-Cutter</strong>
+              <p>Every system is built around your actual workflow. No templates. No generic funnels.</p>
+            </div>
+          </div>
+          <div class="why-item reveal-up">
+            <div class="why-check">✓</div>
+            <div>
+              <strong>Outcomes, Not AI Hype</strong>
+              <p>We focus on booked calls and closed deals — not buzzwords. Your ROI is the metric.</p>
+            </div>
+          </div>
+          <div class="why-item reveal-up">
+            <div class="why-check">✓</div>
+            <div>
+              <strong>Full-Journey Automation</strong>
+              <p>From lead capture to CRM to follow-up to booking — we automate the complete pipeline.</p>
+            </div>
+          </div>
+          <div class="why-item reveal-up">
+            <div class="why-check">✓</div>
+            <div>
+              <strong>Integrates With Your Stack</strong>
+              <p>Works with your CRM, calendar, ads platform, and existing tools — no rip-and-replace.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOUNDER / ABOUT ────────────────────────────────────── -->
+  <section class="founder-section" id="founder">
+    <div class="container">
+      <div class="founder-grid">
+
+        <div class="founder-image-col reveal-up">
+          <div class="founder-frame">
+            <div class="founder-frame-corner founder-frame-tl"></div>
+            <div class="founder-frame-corner founder-frame-br"></div>
+            <img src="img/okayyy.jpeg" alt="Onuora — Founder &amp; AI Systems Strategist" class="founder-img" />
+            <div class="founder-img-gradient"></div>
+            <div class="founder-nameplate">
+              <span class="founder-nameplate-name">ONUORA</span>
+              <span class="founder-nameplate-title">Founder &amp; AI Systems Strategist</span>
+            </div>
+          </div>
+          <div class="founder-creds">
+            <div class="founder-cred-item"><span class="founder-cred-dot">◈</span><span>DevOps &amp; Cloud Engineering</span></div>
+            <div class="founder-cred-item"><span class="founder-cred-dot">◈</span><span>Cybersecurity &amp; SecOps</span></div>
+            <div class="founder-cred-item"><span class="founder-cred-dot">◈</span><span>AI Automation Systems</span></div>
+          </div>
+        </div>
+
+        <div class="founder-content reveal-up">
+          <div class="section-tag-static">MEET THE FOUNDER</div>
+          <h2 class="section-title">Built by Someone Who<br>Understands Both Worlds</h2>
+          <p class="founder-bio">Onuora builds AI-powered systems that capture leads, automate follow-up, and turn more opportunities into booked revenue — without adding headcount or manual overhead.</p>
+          <p class="founder-bio founder-bio-secondary">With a foundation in DevOps, cloud engineering, and cybersecurity, he brings the technical depth to build systems that are reliable, scalable, and production-ready. That background — combined with a sharp focus on business outcomes — means every automation is built to perform in the real world, not just in a demo. Before founding AP Systems, he worked across cloud infrastructure, security operations, and enterprise automation — helping teams eliminate manual work at scale.</p>
+
+          <div class="founder-systems-block">
+            <div class="founder-systems-label">SYSTEMS BUILT INCLUDE</div>
+            <div class="founder-systems-grid">
+              <div class="founder-system-item"><span class="founder-sys-arrow">→</span><span>AI lead capture &amp; follow-up workflows</span></div>
+              <div class="founder-system-item"><span class="founder-sys-arrow">→</span><span>Missed-call instant text-back systems</span></div>
+              <div class="founder-system-item"><span class="founder-sys-arrow">→</span><span>Renewal &amp; reminder automations</span></div>
+              <div class="founder-system-item"><span class="founder-sys-arrow">→</span><span>Document collection workflows</span></div>
+              <div class="founder-system-item"><span class="founder-sys-arrow">→</span><span>CRM-connected AI call summaries</span></div>
+              <div class="founder-system-item"><span class="founder-sys-arrow">→</span><span>Custom client automation systems</span></div>
+            </div>
+          </div>
+
+          <blockquote class="founder-closing">
+            The technical background is how the systems get built. The business focus is why they actually drive revenue.
+          </blockquote>
+
+          <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary">Book a Strategy Call</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INDUSTRIES ─────────────────────────────────────────── -->
+  <section class="industries-section" id="industries">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag-static">INDUSTRIES WE SERVE</div>
+        <h2 class="section-title">Built for Your<br>Business Type</h2>
+      </div>
+      <div class="industries-grid">
+        <div class="ind-card reveal-up">
+          <div class="ind-icon">◈</div>
+          <h4>Insurance Agencies</h4>
+          <p>Qualify inbound leads and automate follow-up before competitors call first.</p>
+        </div>
+        <div class="ind-card reveal-up">
+          <div class="ind-icon">◈</div>
+          <h4>Financial Advisors</h4>
+          <p>Nurture cold prospects into booked discovery calls automatically.</p>
+        </div>
+        <div class="ind-card reveal-up">
+          <div class="ind-icon">◈</div>
+          <h4>Local Service Businesses</h4>
+          <p>Capture every inbound lead and respond instantly — 24/7.</p>
+        </div>
+        <div class="ind-card reveal-up">
+          <div class="ind-icon">◈</div>
+          <h4>Marketing Agencies</h4>
+          <p>Build a repeatable lead system your own team can rely on.</p>
+        </div>
+        <div class="ind-card reveal-up">
+          <div class="ind-icon">◈</div>
+          <h4>B2B Consultants</h4>
+          <p>Automate outreach, qualification, and scheduling for high-ticket services.</p>
+        </div>
+        <div class="ind-card reveal-up">
+          <div class="ind-icon">◈</div>
+          <h4>SaaS &amp; Tech Founders</h4>
+          <p>Turn demo requests into pipeline with AI-driven qualification flows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ────────────────────────────────────────────────── -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag-static">FAQ</div>
+        <h2 class="section-title">Common Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal-up">
+          <button class="faq-question">What types of businesses do you work with?</button>
+          <div class="faq-answer"><p>Service businesses, agencies, financial advisors, insurance agencies, consultants, and B2B founders who need a more automated, scalable lead pipeline.</p></div>
+        </div>
+        <div class="faq-item reveal-up">
+          <button class="faq-question">Do you build custom systems or use templates?</button>
+          <div class="faq-answer"><p>Everything is custom-built around your specific workflow, audience, and tools. We don't sell one-size-fits-all automation packages.</p></div>
+        </div>
+        <div class="faq-item reveal-up">
+          <button class="faq-question">Which system is right for me — Lead Gen or Pipeline Recovery?</button>
+          <div class="faq-answer"><p>If you need a consistent flow of new leads entering your pipeline, the AI Lead Gen Engine is the right fit. If you already have leads, past clients, or inbound inquiries but poor follow-up, the Pipeline Recovery Engine is designed to unlock that existing revenue first. Many clients start with Recovery and add Lead Gen once the foundation is in place.</p></div>
+        </div>
+        <div class="faq-item reveal-up">
+          <button class="faq-question">Can you integrate with our CRM?</button>
+          <div class="faq-answer"><p>Yes. We integrate with most major CRMs including GoHighLevel, HubSpot, Salesforce, Pipedrive, and more. We'll assess your stack on the strategy call.</p></div>
+        </div>
+        <div class="faq-item reveal-up">
+          <button class="faq-question">How long does implementation take?</button>
+          <div class="faq-answer"><p>First automations go live within 48 hours. A full end-to-end AI lead system is typically deployed within 2–4 weeks depending on complexity.</p></div>
+        </div>
+        <div class="faq-item reveal-up">
+          <button class="faq-question">What makes this different from a VA or basic Zapier automations?</button>
+          <div class="faq-answer"><p>A VA sleeps, gets sick, and can't scale. Basic automations handle one step. We build intelligent systems that handle the entire lead journey — qualification, follow-up, objection handling, and booking — around the clock, without you lifting a finger.</p></div>
+        </div>
+        <div class="faq-item reveal-up">
+          <button class="faq-question">Do I need existing tools or tech setup?</button>
+          <div class="faq-answer"><p>No. We'll recommend and set up the right tools for your situation. If you already have tools in place, we'll connect them. Either way, we handle the complete technical build.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FINAL CTA ───────────────────────────────────────────── -->
+  <section class="final-cta" id="cta-section">
+    <div class="cta-bg-grid"></div>
+    <div class="container">
+      <div class="final-cta-inner reveal-up">
+        <div class="section-tag-static">START TODAY</div>
+        <h2 class="cta-big-headline">YOUR LEADS AREN'T<br>WAITING. ARE YOU?</h2>
+        <p class="cta-big-sub">Book a free 30-minute strategy call. We'll map your AI lead engine, identify which system fits your situation, and show you exactly what's possible.</p>
+        <div class="cta-actions">
+          <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary btn-large">Book Your Free Strategy Call →</a>
+          <div class="cta-note">Free 30-min call · No commitment · Custom roadmap included</div>
+        </div>
+        <div class="cta-trust-row">
+          <span>✓ No contracts</span>
+          <span>✓ Full transparency</span>
+          <span>✓ Delivery guaranteed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ──────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">AP <span>SYSTEMS</span></div>
+          <p>Built to turn leads into booked appointments.</p>
+          <div class="footer-socials">
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <strong>Systems</strong>
+            <a href="#offers">AI Lead Gen Engine</a>
+            <a href="#offers">Pipeline Recovery Engine</a>
+            <a href="#services-detail">All Services</a>
+            <a href="#guarantee">Guarantee</a>
+          </div>
+          <div class="footer-col">
+            <strong>Company</strong>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#proof">Results</a>
+            <a href="#industries">Industries</a>
+            <a href="#faq">FAQ</a>
+            <a href="#cta-section">Contact</a>
+          </div>
+        </div>
+        <div class="footer-cta-block">
+          <strong>Ready to automate?</strong>
+          <p>Book a free strategy call and get a custom roadmap for your AI system.</p>
+          <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary">Book a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 AP Systems. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── STICKY MOBILE CTA ──────────────────────────────────── -->
+  <div class="sticky-mobile-cta" id="sticky-mobile-cta">
+    <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn-primary">Book a Free Strategy Call →</a>
+  </div>
+
+  <!-- CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
