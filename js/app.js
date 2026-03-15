@@ -216,14 +216,19 @@ function initScrollEffects() {
   const isMobile  = window.matchMedia('(pointer: coarse)').matches;
 
   if (isMobile) {
-    hero.style.transition = 'opacity 0.3s ease';
-    ScrollTrigger.create({
-      trigger: container,
-      start:   'top top',
-      end:     '8% top',
-      onLeave:      () => { hero.style.opacity = '0'; },
-      onEnterBack:  () => { hero.style.opacity = '1'; },
-    });
+    hero.style.transition = 'opacity 0.25s ease';
+    const fadeDistance = window.innerHeight * 0.12;
+    window.addEventListener('scroll', () => {
+      const containerTop = container.getBoundingClientRect().top;
+      if (containerTop >= 0) {
+        // scroll container hasn't reached viewport top — hero fully visible
+        hero.style.opacity = '1';
+      } else {
+        // fade hero out as scroll container scrolls up past viewport top
+        const op = Math.max(0, 1 + containerTop / fadeDistance);
+        hero.style.opacity = op;
+      }
+    }, { passive: true });
     return;
   }
 
