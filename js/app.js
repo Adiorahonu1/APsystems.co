@@ -262,24 +262,28 @@ function initScrollEffects() {
 /* ── FRAME SCROLL — synchronous draw, zero seek lag ─────────── */
 function initFrameScroll() {
   const isMobile = window.matchMedia('(pointer: coarse)').matches;
+  const container = document.getElementById('scroll-container');
   if (isMobile) {
-    // On mobile: auto-play frames like a looping video at ~24fps
-    let mobileFrame = 0;
-    let lastTime = 0;
-    const FPS = 24;
-    const interval = 1000 / FPS;
-    function playFrames(timestamp) {
-      if (timestamp - lastTime >= interval) {
-        lastTime = timestamp;
-        drawFrame(mobileFrame);
-        mobileFrame = (mobileFrame + 1) % FRAME_COUNT;
+    // On mobile: scroll-driven via passive listener, throttled to ~30fps
+    // Avoids GSAP scrub:true thrashing while keeping animation tied to scroll
+    let lastDrawTime = 0;
+    window.addEventListener('scroll', () => {
+      const now = performance.now();
+      if (now - lastDrawTime < 32) return;
+      lastDrawTime = now;
+      const rect = container.getBoundingClientRect();
+      const p = clamp(-rect.top / container.offsetHeight, 0, 1);
+      const idx = Math.min(
+        Math.floor(clamp(p * FRAME_SPEED, 0, 1) * FRAME_COUNT),
+        FRAME_COUNT - 1
+      );
+      if (idx !== currentFrame) {
+        currentFrame = idx;
+        requestAnimationFrame(() => drawFrame(currentFrame));
       }
-      requestAnimationFrame(playFrames);
-    }
-    requestAnimationFrame(playFrames);
+    }, { passive: true });
     return;
   }
-  const container = document.getElementById('scroll-container');
   ScrollTrigger.create({
     trigger:  container,
     start:    'top top',
@@ -300,6 +304,7 @@ function initFrameScroll() {
 
 /* ── MARQUEE ─────────────────────────────────────────────────── */
 function initMarquee() {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
   const wrap  = document.getElementById('marquee-wrap');
   const track = document.getElementById('marquee-track');
   const c     = document.getElementById('scroll-container');
