@@ -509,6 +509,8 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
   border: 1px solid var(--border); display: inline-block; margin-bottom: 0.6rem;
 }
 .proof-logo--magenta { color: var(--accent-magenta); border-color: rgba(232,121,249,0.2); }
+.proof-logo--img { background: none; border: none; padding: 0; }
+.proof-logo-img { height: 60px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; display: block; }
 .proof-client-name { font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-display); letter-spacing: 0.08em; }
 .proof-stat {
   font-family: var(--font-display); font-size: clamp(4rem, 8vw, 6.5rem);
