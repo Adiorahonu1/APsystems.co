@@ -225,7 +225,8 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
 .sys-pill--magenta { border-color: rgba(232,121,249,0.3); color: var(--accent-magenta); }
 .sys-divider { color: var(--text-dim); font-size: 0.8rem; }
 
-.hero-ctas { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.hero-ctas { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+.hero-microcopy { font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.06em; margin-bottom: 2rem; }
 .hero-trust { display: flex; gap: 2rem; flex-wrap: wrap; }
 .trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-display); letter-spacing: 0.08em; }
 .trust-icon { color: var(--accent-cyan); }
