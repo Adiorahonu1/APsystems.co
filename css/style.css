@@ -95,6 +95,8 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
 .nav-links { display: flex; gap: 2.5rem; }
 .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; color: var(--text-muted); transition: color 0.2s; }
 .nav-links a:hover { color: var(--accent-cyan); }
+.nav-links a.nav-highlight { color: var(--text-primary); }
+.nav-links a.nav-highlight:hover { color: var(--accent-cyan); }
 .nav-cta {
   font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.12em;
   padding: 0.6rem 1.4rem;
@@ -590,6 +592,29 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
 .proof-cta { text-align: center; }
 .proof-cta-note { font-size: 1rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7; }
 
+/* ── STATIC BRIDGE ── */
+.static-bridge {
+  padding: 7rem 0;
+  background: var(--bg-dark);
+  position: relative; z-index: 10;
+  border-bottom: 1px solid var(--border);
+}
+.bridge-kicker {
+  font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.28em;
+  color: var(--accent-cyan); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem;
+}
+.bridge-kicker::before { content: ''; width: 20px; height: 1px; background: var(--accent-cyan); }
+.bridge-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.95; letter-spacing: 0.04em;
+  color: var(--text-primary); margin-bottom: 1.5rem;
+}
+.bridge-headline span { -webkit-text-stroke: 1px var(--accent-cyan); color: transparent; }
+.bridge-sub {
+  font-size: 1.05rem; color: var(--text-muted); max-width: 480px; line-height: 1.75;
+}
+
 /* Services Section */
 .services-section {
   padding: 8rem 0;
@@ -605,7 +630,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
   display: flex; align-items: center; gap: 0.75rem;
 }
 .section-tag-static::before { content: ''; width: 20px; height: 1px; background: var(--accent-cyan); }
-.section-title { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,5rem); line-height: 1; letter-spacing: 0.04em; color: var(--text-primary); margin-bottom: 1rem; }
+.section-title { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,5rem); line-height: 1; letter-spacing: 0.04em; color: var(--text-primary); margin-bottom: 1rem; text-transform: uppercase; }
 .section-intro { font-size: 1.05rem; color: var(--text-muted); max-width: 540px; line-height: 1.75; }
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.5px; border: 1.5px solid var(--border); }
 .svc-card { padding: 2.5rem; background: var(--bg-dark); border: 1px solid var(--border); transition: background 0.3s; position: relative; overflow: hidden; }
