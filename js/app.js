@@ -6,7 +6,7 @@
 'use strict';
 
 /* ── CONFIG ─────────────────────────────────────────────────── */
-const FRAME_COUNT  = 121;
+const FRAME_COUNT  = 145;
 const FRAME_SPEED  = 2.0;   // animation completes by ~55% scroll
 const IMAGE_SCALE  = 0.85;  // padded-contain scaling
 const BG_COLOR     = '#06060f';
