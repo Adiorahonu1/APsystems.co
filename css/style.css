@@ -530,6 +530,63 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
 .proof-story-label { font-family: var(--font-display); font-size: 0.62rem; letter-spacing: 0.25em; color: var(--accent-cyan); display: block; margin-bottom: 0.4rem; }
 .proof-card--secondary .proof-story-label { color: var(--accent-magenta); }
 .proof-story-item p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+/* ── VOICE DEMO BLOCK ── */
+.poc-voice-block {
+  margin-top: 2.25rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,229,255,0.1);
+}
+.poc-voice-label {
+  font-family: var(--font-display);
+  font-size: 0.62rem; letter-spacing: 0.25em;
+  color: var(--accent-cyan); display: block; margin-bottom: 0.85rem;
+}
+.poc-voice-intro {
+  font-size: 0.9rem; color: var(--text-muted); line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+.poc-voice-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 640px) { .poc-voice-grid { grid-template-columns: 1fr; } }
+.poc-voice-card {
+  background: var(--bg-mid);
+  border: 1px solid rgba(0,229,255,0.1);
+  border-left: 3px solid var(--accent-cyan);
+  border-radius: 10px;
+  padding: 1.25rem 1.25rem 1rem;
+  transition: box-shadow 0.2s;
+}
+.poc-voice-card--us {
+  border-left-color: var(--accent-magenta);
+  border-color: rgba(232,121,249,0.12);
+}
+.poc-voice-card:hover { box-shadow: 0 6px 28px rgba(0,229,255,0.08); }
+.poc-voice-card--us:hover { box-shadow: 0 6px 28px rgba(232,121,249,0.08); }
+.poc-voice-tag {
+  font-family: var(--font-display);
+  font-size: 0.58rem; letter-spacing: 0.2em;
+  color: var(--accent-cyan); display: block; margin-bottom: 0.6rem;
+}
+.poc-voice-tag--magenta { color: var(--accent-magenta); }
+.poc-voice-title {
+  font-size: 0.95rem; font-weight: 600; color: #fff;
+  margin-bottom: 0.4rem; line-height: 1.35;
+}
+.poc-voice-sub {
+  font-size: 0.82rem; color: var(--text-muted); line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.poc-voice-card audio {
+  width: 100%; accent-color: var(--accent-cyan); border-radius: 6px;
+}
+.poc-voice-card--us audio { accent-color: var(--accent-magenta); }
+.poc-voice-footer {
+  font-size: 0.8rem; color: rgba(255,255,255,0.3);
+  letter-spacing: 0.04em; font-style: italic;
+}
+
 .proof-cta { text-align: center; }
 .proof-cta-note { font-size: 1rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7; }
 
