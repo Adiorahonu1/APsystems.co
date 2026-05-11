@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prevail Movement · Case Study · Adiora Onuora</title>
+  <meta name="description" content="A multi page brand site for a faith driven leadership movement. Licensing, matchup, donations, founder page, and a member auth flow, wired together end to end." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <noscript><style>[data-sr]{opacity:1!important;transform:none!important;}</style></noscript>
+  <style>
+    :root {
+      --bg: #FAFAF7; --bg-2: #F1EFEA; --bg-card: #FFFFFF;
+      --ink: #131313; --ink-2: #2A2A28;
+      --gray: #6B6B66; --gray-2: #A2A29B;
+      --line: #E6E3DB; --accent: #B8967A; --green: #4ADE80;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+      --r: 14px; --r-sm: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ::selection { background: var(--ink); color: white; }
+    [data-sr] { transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+    .sr-ready [data-sr]:not(.sr-in) { opacity: 0; transform: translateY(20px); }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 100px; font-size: 14px; font-weight: 500; letter-spacing: -0.005em; transition: background 0.2s, transform 0.2s, box-shadow 0.3s; white-space: nowrap; }
+    .btn-primary { background: var(--ink); color: var(--bg); }
+    .btn-primary:hover { background: var(--ink-2); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(19,19,19,0.15); }
+    .btn-outline-light { background: transparent; color: var(--bg); border: 1px solid rgba(250,250,247,0.3); }
+    .btn-outline-light:hover { background: rgba(250,250,247,0.08); border-color: var(--bg); }
+    .btn-arrow { transition: transform 0.25s var(--ease); display: inline-block; }
+    .btn:hover .btn-arrow { transform: translateX(3px); }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 600; padding: 18px 0; background: rgba(250,250,247,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+    .nav__inner { max-width: 1140px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav__brand { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+    .nav__brand-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); }
+    .nav__brand-name { display: flex; align-items: baseline; gap: 6px; }
+    .nav__brand-name span { font-weight: 400; color: var(--gray); font-size: 13px; }
+    .nav__cta { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px; background: var(--ink); color: var(--bg); border-radius: 100px; font-size: 13.5px; font-weight: 500; transition: background 0.2s, transform 0.2s; }
+    .nav__cta:hover { background: var(--ink-2); transform: translateY(-1px); }
+    .nav__cta-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse-green 2s infinite; }
+
+    .case-hero { padding: 152px 0 64px; }
+    .case-hero__inner { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+    .case-hero__back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--gray); margin-bottom: 40px; transition: color 0.2s; }
+    .case-hero__back:hover { color: var(--ink); }
+    .case-hero__back-arrow { transform: rotate(180deg); transition: transform 0.25s var(--ease); display: inline-block; }
+    .case-hero__back:hover .case-hero__back-arrow { transform: rotate(180deg) translateX(3px); }
+    .case-hero__meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .case-hero__chip { font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bg-card); border: 1px solid var(--line); color: var(--gray); }
+    .case-hero__chip--accent { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .case-hero__client { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-2); margin-bottom: 16px; }
+    .case-hero__title { font-family: var(--sans); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 500; line-height: 1.02; letter-spacing: -0.032em; color: var(--ink); margin-bottom: 22px; }
+    .case-hero__title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--ink); }
+    .case-hero__sub { font-size: clamp(1.05rem, 1.4vw, 1.2rem); line-height: 1.55; color: var(--gray); max-width: 680px; letter-spacing: -0.005em; }
+
+    .feature { max-width: 1140px; margin: 0 auto 56px; padding: 0 28px; }
+    .feature__frame { border-radius: var(--r); overflow: hidden; box-shadow: 0 20px 60px rgba(19,19,19,0.1); border: 1px solid var(--line); background: white; }
+    .feature__bar { height: 30px; background: var(--bg-2); display: flex; align-items: center; padding: 0 12px; gap: 6px; border-bottom: 1px solid var(--line); }
+    .feature__dot { width: 10px; height: 10px; border-radius: 50%; background: #d0cdc4; }
+    .feature__url { flex: 1; margin-left: 6px; background: var(--bg); border-radius: 5px; padding: 3px 11px; font-size: 11.5px; color: var(--gray); }
+    .feature__img { width: 100%; display: block; }
+
+    .meta-strip { max-width: 980px; margin: 0 auto 64px; padding: 0 28px; }
+    .meta-strip__grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: var(--r); background: var(--bg-card); overflow: hidden; }
+    .meta-cell { padding: 20px 22px; border-right: 1px solid var(--line); }
+    .meta-cell:last-child { border-right: none; }
+    .meta-cell__label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-2); margin-bottom: 6px; }
+    .meta-cell__value { font-family: var(--sans); font-size: 14.5px; font-weight: 500; color: var(--ink); letter-spacing: -0.005em; }
+
+    .case-block { padding-block: 56px; }
+    .case-block:nth-of-type(even) { background: var(--bg-2); }
+    .case-block__inner { max-width: 980px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 170px 1fr; gap: 56px; align-items: start; }
+    .case-block__label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); padding-top: 6px; position: sticky; top: 96px; }
+    .case-block__title { font-family: var(--sans); font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.022em; color: var(--ink); margin-bottom: 20px; }
+    .case-block__title em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .case-block p { font-size: 16.5px; line-height: 1.7; color: var(--ink-2); margin-bottom: 16px; letter-spacing: -0.003em; }
+    .case-block p strong { font-weight: 600; color: var(--ink); }
+    .case-block p:last-child { margin-bottom: 0; }
+
+    .case-list { display: grid; gap: 8px; margin: 20px 0 0; }
+    .case-list li { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 14px 18px 14px 44px; font-size: 15px; color: var(--ink-2); line-height: 1.55; position: relative; }
+    .case-list li::before { content: ''; position: absolute; left: 18px; top: 21px; width: 14px; height: 1px; background: var(--accent); }
+    .case-list li strong { font-weight: 600; color: var(--ink); }
+
+    .case-img { margin: 24px 0 0; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); }
+    .case-img img { width: 100%; }
+    .case-img__caption { padding: 14px 18px; font-size: 13px; color: var(--gray); background: var(--bg-card); border-top: 1px solid var(--line); font-family: var(--serif); font-style: italic; font-size: 14.5px; }
+
+    .pillar-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
+    .pillar { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 18px 14px; text-align: center; }
+    .pillar__icon { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--accent); margin-bottom: 6px; line-height: 1; font-weight: 400; }
+    .pillar__title { font-family: var(--sans); font-weight: 600; font-size: 13.5px; color: var(--ink); line-height: 1.2; letter-spacing: -0.005em; }
+
+    .device-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: end; margin-top: 28px; }
+    .device-frame { background: #1a1a1a; border-radius: 16px; padding: 10px; box-shadow: 0 16px 48px rgba(19,19,19,0.15); }
+    .device-frame--mobile { border-radius: 28px; padding: 10px 8px; max-width: 240px; margin: 0 auto; }
+    .device-frame img { border-radius: 7px; width: 100%; }
+    .device-frame--mobile img { border-radius: 20px; }
+    .device-caption { margin-top: 16px; font-style: italic; font-family: var(--serif); font-size: 15px; color: var(--gray); text-align: center; }
+
+    .pull-quote { background: var(--ink); color: var(--bg); padding: 64px 0; margin: 56px 0 0; }
+    .pull-quote__inner { max-width: 820px; margin: 0 auto; padding: 0 28px; text-align: center; }
+    .pull-quote__mark { font-family: var(--serif); font-size: 64px; color: var(--accent); line-height: 0.5; margin-bottom: 16px; }
+    .pull-quote__text { font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 400; line-height: 1.4; margin-bottom: 24px; letter-spacing: -0.005em; }
+    .pull-quote__author { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,250,247,0.6); }
+
+    .result-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0 0; }
+    .result-stat { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--r); padding: 22px 18px; text-align: center; }
+    .result-stat__num { font-family: var(--sans); font-size: clamp(2rem, 3.2vw, 2.8rem); font-weight: 500; letter-spacing: -0.028em; color: var(--ink); line-height: 1; margin-bottom: 8px; }
+    .result-stat__num em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--gray); font-size: 0.7em; }
+    .result-stat__label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
+
+    .next-case { background: var(--bg-2); padding: 64px 0; border-top: 1px solid var(--line); }
+    .next-case__inner { max-width: 980px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
+    .next-case__label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); margin-bottom: 14px; }
+    .next-case__title { font-family: var(--sans); font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.022em; color: var(--ink); margin-bottom: 14px; }
+    .next-case__sub { font-size: 15px; color: var(--gray); margin-bottom: 22px; line-height: 1.6; }
+    .next-case__img { border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); display: block; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+    .next-case__img:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(19,19,19,0.1); }
+    .next-case__img img { width: 100%; display: block; }
+
+    .case-close { background: var(--ink); color: var(--bg); padding-block: 80px; text-align: center; }
+    .case-close__inner { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+    .case-close h2 { font-family: var(--sans); font-size: clamp(1.9rem, 3.6vw, 2.8rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 14px; }
+    .case-close h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+    .case-close p { font-size: 16px; color: rgba(250,250,247,0.7); margin: 0 auto 28px; line-height: 1.6; letter-spacing: -0.005em; }
+    .case-close__actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .case-close .btn-primary { background: var(--bg); color: var(--ink); }
+    .case-close .btn-primary:hover { background: white; }
+
+    @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.55); } 70% { box-shadow: 0 0 0 7px rgba(74,222,128,0); } 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); } }
+
+    @media (max-width: 991px) {
+      .case-block__inner { grid-template-columns: 1fr; gap: 14px; }
+      .case-block__label { position: static; }
+      .meta-strip__grid { grid-template-columns: 1fr 1fr; }
+      .meta-cell:nth-child(2) { border-right: none; }
+      .meta-cell:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .device-row { grid-template-columns: 1fr; gap: 20px; }
+      .device-frame--mobile { max-width: 220px; }
+      .next-case__inner { grid-template-columns: 1fr; }
+      .result-stats { grid-template-columns: 1fr; }
+      .pillar-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .case-hero { padding: 116px 0 48px; }
+      .case-hero__inner, .feature, .meta-strip, .case-block__inner, .next-case__inner, .pull-quote__inner, .case-close__inner { padding-inline: 20px; }
+      .nav__inner { padding: 0 20px; gap: 12px; }
+      .nav__brand-name span { display: none; }
+      .nav__cta { padding: 8px 14px; font-size: 12.5px; gap: 6px; }
+      .case-block { padding-block: 40px; }
+      .meta-strip__grid { grid-template-columns: 1fr; }
+      .meta-cell { border-right: none; border-bottom: 1px solid var(--line); }
+      .meta-cell:last-child { border-bottom: none; }
+      .pillar-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__brand">
+        <img src="../assets/adiora.jpeg" alt="Adiora" class="nav__brand-avatar" />
+        <div class="nav__brand-name"><b>Adiora</b> <span>Onuora</span></div>
+      </a>
+      <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="nav__cta">
+        <span class="nav__cta-dot"></span> Schedule a Call
+      </a>
+    </div>
+  </nav>
+
+  <header class="case-hero">
+    <div class="case-hero__inner">
+      <a href="../index.html#work" class="case-hero__back">
+        <span class="case-hero__back-arrow">→</span> Back to all work
+      </a>
+      <div class="case-hero__meta">
+        <span class="case-hero__chip case-hero__chip--accent">Case Study 03</span>
+        <span class="case-hero__chip">Nonprofit</span>
+        <span class="case-hero__chip">Multi Page Site</span>
+      </div>
+      <p class="case-hero__client">Client · Prevail Movement</p>
+      <h1 class="case-hero__title">A faith driven movement <em>with a real digital home.</em></h1>
+      <p class="case-hero__sub">Not a one page brochure. A full ecosystem: founder page, licensing flow, matchup, media library, donations, invoicing, and member auth. Built and wired together end to end.</p>
+    </div>
+  </header>
+
+  <div class="feature" data-sr>
+    <div class="feature__frame">
+      <div class="feature__bar">
+        <span class="feature__dot"></span><span class="feature__dot"></span><span class="feature__dot"></span>
+        <div class="feature__url">prevailmovement.com</div>
+      </div>
+      <img src="../assets/work/prevail.png" alt="Prevail Movement site" class="feature__img" />
+    </div>
+  </div>
+
+  <div class="meta-strip" data-sr>
+    <div class="meta-strip__grid">
+      <div class="meta-cell"><div class="meta-cell__label">Timeline</div><div class="meta-cell__value">4 weeks</div></div>
+      <div class="meta-cell"><div class="meta-cell__label">My Role</div><div class="meta-cell__value">Strategy · Brand · Build</div></div>
+      <div class="meta-cell"><div class="meta-cell__label">Deliverable</div><div class="meta-cell__value">8 page site + auth + invoicing</div></div>
+      <div class="meta-cell"><div class="meta-cell__label">Scope</div><div class="meta-cell__value">Brand system + full site</div></div>
+    </div>
+  </div>
+
+  <section class="case-block" data-sr>
+    <div class="case-block__inner">
+      <div class="case-block__label">01 · The Brief</div>
+      <div>
+        <h2 class="case-block__title">Build the movement <em>online</em>, not just a website.</h2>
+        <p>Prevail Movement is a faith driven leadership development organization. The founders had something rare: a clear philosophy, a real community, and a growing list of affiliates who wanted to license the brand. What they did not have was anywhere online that explained any of it.</p>
+        <p>The ask was not "a website." The ask was an <strong>online home for the movement.</strong> A place where donors could give, affiliates could license, members could log in, and new visitors could understand the mission in under three minutes.</p>
+        <p>The brief in one sentence: <strong>build the full ecosystem in four weeks, not the half ecosystem in eight.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-block" data-sr>
+    <div class="case-block__inner">
+      <div class="case-block__label">02 · The Approach</div>
+      <div>
+        <h2 class="case-block__title">Lead with the four pillars. <em>Then earn every page.</em></h2>
+        <p>Before any HTML, I spent a week with the founders on the brand. The movement runs on four pillars that became the spine of the entire site:</p>
+        <div class="pillar-row">
+          <div class="pillar"><div class="pillar__icon">I.</div><div class="pillar__title">Honor God</div></div>
+          <div class="pillar"><div class="pillar__icon">II.</div><div class="pillar__title">Pursue Excellence</div></div>
+          <div class="pillar"><div class="pillar__icon">III.</div><div class="pillar__title">Develop Leaders</div></div>
+          <div class="pillar"><div class="pillar__icon">IV.</div><div class="pillar__title">Create Profits</div></div>
+        </div>
+        <p style="margin-top: 20px;">Every page of the site connects back to one of these. The founder page tells the story of how the pillars were chosen. The licensing page explains how affiliates uphold them. The matchup page is where members pair up around them. Without this spine, the site would have been eight disconnected pages. With it, the site is one argument told eight different ways.</p>
+        <ul class="case-list">
+          <li><strong>Index:</strong> the movement at a glance, all four pillars, with one CTA to join.</li>
+          <li><strong>Founder:</strong> origin story, conviction, and a personal invitation.</li>
+          <li><strong>Licensing:</strong> how affiliates apply, what the program covers, application form.</li>
+          <li><strong>Matchup:</strong> member pairing engine for accountability partners.</li>
+          <li><strong>Media:</strong> branded video library with custom player, sermons and teachings.</li>
+          <li><strong>Invoice + auth:</strong> member login, dashboard, and on demand invoice generation.</li>
+        </ul>
+        <div class="case-img">
+          <img src="../assets/work/prevail.png" alt="Prevail Movement homepage" />
+          <div class="case-img__caption">The home page leads with the four pillars. Everything else is downstream of these.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-block" data-sr>
+    <div class="case-block__inner">
+      <div class="case-block__label">03 · The Build</div>
+      <div>
+        <h2 class="case-block__title">Eight pages. <em>One brand system.</em> Member auth wired in.</h2>
+        <p>The brand had to feel like a movement, not a corporation. Deep, warm colors. Editorial typography that respected the spiritual weight of the content. Branded video frames so every sermon and teaching looked like it came from the same publisher.</p>
+        <p>Behind the visible site, an <strong>auth guard system</strong> protects member only pages. Affiliates apply through a licensing form that routes to the founders. Members log in to a dashboard where they can see their matchup partner, watch member only content, and download invoices on demand for any contribution they have made.</p>
+        <p>The invoicing system was the unexpected difficulty. Donors and affiliates kept emailing the founders asking for receipts. I built an on demand invoice generator that pulls from the member dashboard and outputs a branded PDF. The support email volume dropped to almost zero in week two.</p>
+
+        <div class="device-row">
+          <div class="device-frame">
+            <img src="../assets/work/prevail.png" alt="Prevail desktop" />
+          </div>
+          <div class="device-frame device-frame--mobile">
+            <img src="../assets/work/prevail-mobile.png" alt="Prevail mobile" />
+          </div>
+        </div>
+        <p class="device-caption">Eight pages all built mobile first. The matchup engine works on a phone, on the way to church.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pull-quote" data-sr>
+    <div class="pull-quote__inner">
+      <div class="pull-quote__mark">"</div>
+      <p class="pull-quote__text">She did not give us a website. She gave us a home. Every part of what we are doing now has a place online, and every part points back to the mission.</p>
+      <p class="pull-quote__author">Prevail Movement Founders</p>
+    </div>
+  </div>
+
+  <section class="case-block" data-sr>
+    <div class="case-block__inner">
+      <div class="case-block__label">04 · The Result</div>
+      <div>
+        <h2 class="case-block__title">A self serve ecosystem the founders <em>do not have to babysit.</em></h2>
+        <p>Affiliates can now apply, get reviewed, sign their licensing agreement, and access member content without a single email to the founders. Donors get instant invoices. Members find their matchup partner in two clicks. The site does the operational work that used to live in the founders' inboxes.</p>
+        <p>Before the rebuild, the founders spent <strong>roughly five hours a week</strong> answering operational questions over email. After launch, that dropped to under thirty minutes a week. They got their evenings back. The movement got a digital home.</p>
+
+        <div class="result-stats">
+          <div class="result-stat">
+            <div class="result-stat__num">8</div>
+            <div class="result-stat__label">Pages, one brand system</div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat__num">4<em>w</em></div>
+            <div class="result-stat__label">From brief to launch</div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat__num">90%</div>
+            <div class="result-stat__label">Less operational email</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="next-case">
+    <div class="next-case__inner">
+      <div>
+        <p class="next-case__label">All Cases · Loop Back</p>
+        <h3 class="next-case__title">Want to see how it started?</h3>
+        <p class="next-case__sub">Back to the flagship case study. Legacy The Initiative. A husband and wife insurance team, two weeks, one funnel, every booked call pre qualified.</p>
+        <a href="legacy.html" class="btn btn-primary">Read Legacy case study <span class="btn-arrow">→</span></a>
+      </div>
+      <a href="legacy.html" class="next-case__img">
+        <img src="../assets/work/legacy.png" alt="Legacy The Initiative" />
+      </a>
+    </div>
+  </div>
+
+  <section class="case-close">
+    <div class="case-close__inner">
+      <h2>Building something more <em>complex</em> than a single page?</h2>
+      <p>Multi page sites, member auth, licensing flows, invoicing, custom dashboards. If the operational logic lives in your inbox, it belongs on a page. Let's talk.</p>
+      <div class="case-close__actions">
+        <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">Schedule a Call <span class="btn-arrow">→</span></a>
+        <a href="../index.html#work" class="btn btn-outline-light">See more work</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.documentElement.classList.add('sr-ready');
+    const srObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('sr-in'); srObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-sr]').forEach(el => srObs.observe(el));
+  </script>
+</body>
+</html>

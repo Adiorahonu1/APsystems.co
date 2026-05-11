@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Edwin · Sunrun · Case Study · Adiora Onuora</title>
+  <meta name="description" content="How I rebuilt a half finished solar funnel with a hard disqualification gate so only real buyers ever reach the calendar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <noscript><style>[data-sr]{opacity:1!important;transform:none!important;}</style></noscript>
+  <style>
+    :root {
+      --bg: #FAFAF7; --bg-2: #F1EFEA; --bg-card: #FFFFFF;
+      --ink: #131313; --ink-2: #2A2A28;
+      --gray: #6B6B66; --gray-2: #A2A29B;
+      --line: #E6E3DB; --accent: #B8967A; --green: #4ADE80;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+      --r: 14px; --r-sm: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ::selection { background: var(--ink); color: white; }
+    [data-sr] { transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+    .sr-ready [data-sr]:not(.sr-in) { opacity: 0; transform: translateY(20px); }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 100px; font-size: 14px; font-weight: 500; letter-spacing: -0.005em; transition: background 0.2s, transform 0.2s, box-shadow 0.3s; white-space: nowrap; }
+    .btn-primary { background: var(--ink); color: var(--bg); }
+    .btn-primary:hover { background: var(--ink-2); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(19,19,19,0.15); }
+    .btn-outline-light { background: transparent; color: var(--bg); border: 1px solid rgba(250,250,247,0.3); }
+    .btn-outline-light:hover { background: rgba(250,250,247,0.08); border-color: var(--bg); }
+    .btn-arrow { transition: transform 0.25s var(--ease); display: inline-block; }
+    .btn:hover .btn-arrow { transform: translateX(3px); }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 600; padding: 18px 0; background: rgba(250,250,247,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+    .nav__inner { max-width: 1140px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav__brand { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+    .nav__brand-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); }
+    .nav__brand-name { display: flex; align-items: baseline; gap: 6px; }
+    .nav__brand-name span { font-weight: 400; color: var(--gray); font-size: 13px; }
+    .nav__cta { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px; background: var(--ink); color: var(--bg); border-radius: 100px; font-size: 13.5px; font-weight: 500; transition: background 0.2s, transform 0.2s; }
+    .nav__cta:hover { background: var(--ink-2); transform: translateY(-1px); }
+    .nav__cta-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse-green 2s infinite; }
+
+    .case-hero { padding: 152px 0 64px; }
+    .case-hero__inner { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+    .case-hero__back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--gray); margin-bottom: 40px; transition: color 0.2s; }
+    .case-hero__back:hover { color: var(--ink); }
+    .case-hero__back-arrow { transform: rotate(180deg); transition: transform 0.25s var(--ease); display: inline-block; }
+    .case-hero__back:hover .case-hero__back-arrow { transform: rotate(180deg) translateX(3px); }
+    .case-hero__meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .case-hero__chip { font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bg-card); border: 1px solid var(--line); color: var(--gray); }
+    .case-hero__chip--accent { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .case-hero__client { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-2); margin-bottom: 16px; }
+    .case-hero__title { font-family: var(--sans); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 500; line-height: 1.02; letter-spacing: -0.032em; color: var(--ink); margin-bottom: 22px; }
+    .case-hero__title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--ink); }
+    .case-hero__sub { font-size: clamp(1.05rem, 1.4vw, 1.2rem); line-height: 1.55; color: var(--gray); max-width: 680px; letter-spacing: -0.005em; }
+
+    .feature { max-width: 1140px; margin: 0 auto 56px; padding: 0 28px; }
+    .feature__frame { border-radius: var(--r); overflow: hidden; box-shadow: 0 20px 60px rgba(19,19,19,0.1); border: 1px solid var(--line); background: white; }
+    .feature__bar { height: 30px; background: var(--bg-2); display: flex; align-items: center; padding: 0 12px; gap: 6px; border-bottom: 1px solid var(--line); }
+    .feature__dot { width: 10px; height: 10px; border-radius: 50%; background: #d0cdc4; }
+    .feature__url { flex: 1; margin-left: 6px; background: var(--bg); border-radius: 5px; padding: 3px 11px; font-size: 11.5px; color: var(--gray); }
+    .feature__img { width: 100%; display: block; }
+
+    .meta-strip { max-width: 980px; margin: 0 auto 64px; padding: 0 28px; }
+    .meta-strip__grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: var(--r); background: var(--bg-card); overflow: hidden; }
+    .meta-cell { padding: 20px 22px; border-right: 1px solid var(--line); }
+    .meta-cell:last-child { border-right: none; }
+    .meta-cell__label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-2); margin-bottom: 6px; }
+    .meta-cell__value { font-family: var(--sans); font-size: 14.5px; font-weight: 500; color: var(--ink); letter-spacing: -0.005em; }
+
+    .case-block { padding-block: 56px; }
+    .case-block:nth-of-type(even) { background: var(--bg-2); }
+    .case-block__inner { max-width: 980px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 170px 1fr; gap: 56px; align-items: start; }
+    .case-block__label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); padding-top: 6px; position: sticky; top: 96px; }
+    .case-block__title { font-family: var(--sans); font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.022em; color: var(--ink); margin-bottom: 20px; }
+    .case-block__title em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .case-block p { font-size: 16.5px; line-height: 1.7; color: var(--ink-2); margin-bottom: 16px; letter-spacing: -0.003em; }
+    .case-block p strong { font-weight: 600; color: var(--ink); }
+    .case-block p:last-child { margin-bottom: 0; }
+
+    .case-list { display: grid; gap: 8px; margin: 20px 0 0; }
+    .case-list li { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 14px 18px 14px 44px; font-size: 15px; color: var(--ink-2); line-height: 1.55; position: relative; }
+    .case-list li::before { content: ''; position: absolute; left: 18px; top: 21px; width: 14px; height: 1px; background: var(--accent); }
+    .case-list li strong { font-weight: 600; color: var(--ink); }
+
+    .case-img { margin: 24px 0 0; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); }
+    .case-img img { width: 100%; }
+    .case-img__caption { padding: 14px 18px; font-size: 13px; color: var(--gray); background: var(--bg-card); border-top: 1px solid var(--line); font-family: var(--serif); font-style: italic; font-size: 14.5px; }
+
+    .device-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: end; margin-top: 28px; }
+    .device-frame { background: #1a1a1a; border-radius: 16px; padding: 10px; box-shadow: 0 16px 48px rgba(19,19,19,0.15); }
+    .device-frame--mobile { border-radius: 28px; padding: 10px 8px; max-width: 240px; margin: 0 auto; }
+    .device-frame img { border-radius: 7px; width: 100%; }
+    .device-frame--mobile img { border-radius: 20px; }
+    .device-caption { margin-top: 16px; font-style: italic; font-family: var(--serif); font-size: 15px; color: var(--gray); text-align: center; }
+
+    .pull-quote { background: var(--ink); color: var(--bg); padding: 64px 0; margin: 56px 0 0; }
+    .pull-quote__inner { max-width: 820px; margin: 0 auto; padding: 0 28px; text-align: center; }
+    .pull-quote__mark { font-family: var(--serif); font-size: 64px; color: var(--accent); line-height: 0.5; margin-bottom: 16px; }
+    .pull-quote__text { font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 400; line-height: 1.4; margin-bottom: 24px; letter-spacing: -0.005em; }
+    .pull-quote__author { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,250,247,0.6); }
+
+    .result-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0 0; }
+    .result-stat { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--r); padding: 22px 18px; text-align: center; }
+    .result-stat__num { font-family: var(--sans); font-size: clamp(2rem, 3.2vw, 2.8rem); font-weight: 500; letter-spacing: -0.028em; color: var(--ink); line-height: 1; margin-bottom: 8px; }
+    .result-stat__num em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--gray); font-size: 0.7em; }
+    .result-stat__label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
+
+    .next-case { background: var(--bg-2); padding: 64px 0; border-top: 1px solid var(--line); }
+    .next-case__inner { max-width: 980px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
+    .next-case__label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); margin-bottom: 14px; }
+    .next-case__title { font-family: var(--sans); font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.022em; color: var(--ink); margin-bottom: 14px; }
+    .next-case__sub { font-size: 15px; color: var(--gray); margin-bottom: 22px; line-height: 1.6; }
+    .next-case__img { border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); display: block; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+    .next-case__img:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(19,19,19,0.1); }
+    .next-case__img img { width: 100%; display: block; }
+
+    .case-close { background: var(--ink); color: var(--bg); padding-block: 80px; text-align: center; }
+    .case-close__inner { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+    .case-close h2 { font-family: var(--sans); font-size: clamp(1.9rem, 3.6vw, 2.8rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 14px; }
+    .case-close h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+    .case-close p { font-size: 16px; color: rgba(250,250,247,0.7); margin: 0 auto 28px; line-height: 1.6; letter-spacing: -0.005em; }
+    .case-close__actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .case-close .btn-primary { background: var(--bg); color: var(--ink); }
+    .case-close .btn-primary:hover { background: white; }
+
+    @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.55); } 70% { box-shadow: 0 0 0 7px rgba(74,222,128,0); } 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); } }
+
+    @media (max-width: 991px) {
+      .case-block__inner { grid-template-columns: 1fr; gap: 14px; }
+      .case-block__label { position: static; }
+      .meta-strip__grid { grid-template-columns: 1fr 1fr; }
+      .meta-cell:nth-child(2) { border-right: none; }
+      .meta-cell:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .device-row { grid-template-columns: 1fr; gap: 20px; }
+      .device-frame--mobile { max-width: 220px; }
+      .next-case__inner { grid-template-columns: 1fr; }
+      .result-stats { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .case-hero { padding: 116px 0 48px; }
+      .case-hero__inner, .feature, .meta-strip, .case-block__inner, .next-case__inner, .pull-quote__inner, .case-close__inner { padding-inline: 20px; }
+      .nav__inner { padding: 0 20px; gap: 12px; }
+      .nav__brand-name span { display: none; }
+      .nav__cta { padding: 8px 14px; font-size: 12.5px; gap: 6px; }
+      .case-block { padding-block: 40px; }
+      .meta-strip__grid { grid-template-columns: 1fr; }
+      .meta-cell { border-right: none; border-bottom: 1px solid var(--line); }
+      .meta-cell:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__brand">
+        <img src="../assets/adiora.jpeg" alt="Adiora" class="nav__brand-avatar" />
+        <div class="nav__brand-name"><b>Adiora</b> <span>Onuora</span></div>
+      </a>
+      <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="nav__cta">
+        <span class="nav__cta-dot"></span> Schedule a Call
+      </a>
+    </div>
+  </nav>
+
+  <header class="case-hero">
+    <div class="case-hero__inner">
+      <a href="../index.html#work" class="case-hero__back">
+        <span class="case-hero__back-arrow">→</span> Back to all work
+      </a>
+      <div class="case-hero__meta">
+        <span class="case-hero__chip case-hero__chip--accent">Case Study 02</span>
+        <span class="case-hero__chip">Solar</span>
+        <span class="case-hero__chip">Lead Funnel</span>
+      </div>
+      <p class="case-hero__client">Client · Michael Edwin, Sunrun NJ</p>
+      <h1 class="case-hero__title">A solar funnel that <em>disqualifies</em> the wrong buyers on purpose.</h1>
+      <p class="case-hero__sub">Most lead funnels try to capture everyone. This one was built to capture fewer leads, but only the ones who can actually buy. The rep got his weekends back.</p>
+    </div>
+  </header>
+
+  <div class="feature" data-sr>
+    <div class="feature__frame">
+      <div class="feature__bar">
+        <span class="feature__dot"></span><span class="feature__dot"></span><span class="feature__dot"></span>
+        <div class="feature__url">michaeledwin.sunrun.com</div>
+      </div>
+      <img src="../assets/work/sunrun.png" alt="Michael Edwin Sunrun funnel" class="feature__img" />
+    </div>
+  </div>
+
+  <div class="meta-strip" data-sr>
+    <div class="meta-strip__grid">
+      <div class="meta-cell"><div class="meta-cell__label">Timeline</div><div class="meta-cell__value">10 days</div></div>
+      <div class="meta-cell"><div class="meta-cell__label">My Role</div><div class="meta-cell__value">Strategy · Copy · Build</div></div>
+      <div class="meta-cell"><div class="meta-cell__label">Deliverable</div><div class="meta-cell__value">Funnel + qualification gate</div></div>
+      <div class="meta-cell"><div class="meta-cell__label">Territory</div><div class="meta-cell__value">New Jersey &amp; New York</div></div>
+    </div>
+  </div>
+
+  <section class="case-block" data-sr>
+    <div class="case-block__inner">
+      <div class="case-block__label">01 · The Brief</div>
+      <div>
+        <h2 class="case-block__title">Too many leads. Almost none of them <em>could buy.</em></h2>
+        <p>Michael Edwin sells residential solar through Sunrun in New Jersey and New York. He had a half built page running paid traffic. Leads were coming in. Most of them could not actually buy. <strong>Renters.</strong> Wrong roof orientation. Out of territory. Apartment dwellers who saw a $0 down headline and clicked anyway.</p>
+        <p>Every wasted call cost Michael an hour. Every wasted hour cost him weekends he wanted to spend with his family. The funnel was working too well, in the wrong direction.</p>
+        <p>The brief: <strong>fewer leads, higher conversion.</strong> Build a funnel that turns away anyone who cannot benefit from solar before they ever see the calendar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-block" data-sr>
+    <div class="case-block__inner">
+      <div class="case-block__label">02 · The Approach</div>
+      <div>
+        <h2 class="case-block__title">Lead with the gate, not <em>the offer.</em></h2>
+        <p>The instinct in most funnels is to put the offer first and the qualification second. We flipped it. The territory map appears in the first viewport. <strong>"We serve New Jersey and New York."</strong> No ambiguity. Out of state visitors are told plainly that this is not for them, and that is fine.</p>
+        <p>From there, a four step qualification flow:</p>
+        <ul class="case-list">
+          <li><strong>Step 1:</strong> Are you the homeowner? Renters exit politely with a save the link for later message.</li>
+          <li><strong>Step 2:</strong> Is your monthly electric bill above $80? Below threshold means solar will not save them enough money to make sense. They exit.</li>
+          <li><strong>Step 3:</strong> Roof type and orientation. Flat or shaded roofs get routed to a battery or alternative consult.</li>
+          <li><strong>Step 4:</strong> Address confirmation. Auto checks against the NJ and NY service map.</li>
+        </ul>
+        <p>Only the visitors who pass all four gates ever see the calendar. The rest exit on a thank you page with educational content, not a sales push.</p>
+        <div class="case-img">
+          <img src="../assets/work/sunrun.png" alt="Sunrun hero and territory section" />
+          <div class="case-img__caption">The territory map appears in the first viewport. Out of state visitors know in three seconds.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-block" data-sr>
+    <div class="case-block__inner">
+      <div class="case-block__label">03 · The Build</div>
+      <div>
+        <h2 class="case-block__title">Single page funnel. <em>Sticky CTA.</em> Real time validation.</h2>
+        <p>The whole experience lives on one page. No multi step wizard, no page reloads, no lost progress. Each qualifying step appears in place as the previous one resolves. Mobile users finish the full flow without their thumb ever leaving the screen.</p>
+        <p>The closing CTA sticks to the bottom of the viewport on mobile from the second the visitor scrolls past the hero. The address confirmation runs against the Sunrun service map in real time, so an out of territory ZIP gets caught before the form even submits.</p>
+        <p>A confetti animated thank you page on successful booking, with a calendar reminder add to phone link, so Michael's no show rate dropped at the same time his qualification rate climbed.</p>
+
+        <div class="device-row">
+          <div class="device-frame">
+            <img src="../assets/work/sunrun.png" alt="Sunrun desktop" />
+          </div>
+          <div class="device-frame device-frame--mobile">
+            <img src="../assets/work/sunrun-mobile.png" alt="Sunrun mobile" />
+          </div>
+        </div>
+        <p class="device-caption">Mobile gets the same flow with a sticky bottom CTA. Thumb friendly, never lost.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pull-quote" data-sr>
+    <div class="pull-quote__inner">
+      <div class="pull-quote__mark">"</div>
+      <p class="pull-quote__text">I came in with a half built Sunrun page. She tore it down, added a disqualification gate, and now every call that hits my calendar is a real buyer.</p>
+      <p class="pull-quote__author">Michael Edwin · Solar Consultant, Sunrun NJ</p>
+    </div>
+  </div>
+
+  <section class="case-block" data-sr>
+    <div class="case-block__inner">
+      <div class="case-block__label">04 · The Result</div>
+      <div>
+        <h2 class="case-block__title">Fewer calls. Every one of them <em>real.</em></h2>
+        <p>The funnel now turns away about three out of four visitors before they reach the calendar. That sounds bad. It is exactly what Michael needed. The remaining one in four is a homeowner, in territory, with the right roof, and a real electric bill, every single time.</p>
+        <p>Michael's calendar went from <strong>"I have ten calls this week and seven are dead"</strong> to <strong>"I have three calls and three are quotes."</strong> Same revenue, a third of the time, weekends back.</p>
+
+        <div class="result-stats">
+          <div class="result-stat">
+            <div class="result-stat__num">10<em>d</em></div>
+            <div class="result-stat__label">From brief to live</div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat__num">4</div>
+            <div class="result-stat__label">Qualification gates</div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat__num">75%</div>
+            <div class="result-stat__label">Disqualified before calendar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="next-case">
+    <div class="next-case__inner">
+      <div>
+        <p class="next-case__label">Up Next · Case 03</p>
+        <h3 class="next-case__title">Prevail Movement</h3>
+        <p class="next-case__sub">A multi page brand site for a faith driven leadership movement. Licensing, matchup, donations, and a founder page, all wired together.</p>
+        <a href="prevail-movement.html" class="btn btn-primary">Read case study <span class="btn-arrow">→</span></a>
+      </div>
+      <a href="prevail-movement.html" class="next-case__img">
+        <img src="../assets/work/prevail.png" alt="Prevail Movement" />
+      </a>
+    </div>
+  </div>
+
+  <section class="case-close">
+    <div class="case-close__inner">
+      <h2>Want a funnel that <em>filters</em> instead of floods?</h2>
+      <p>Book a 30 minute discovery call. We talk audience, offer, and what your sales reps wish would stop showing up on the calendar. Free, no pitch.</p>
+      <div class="case-close__actions">
+        <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">Schedule a Call <span class="btn-arrow">→</span></a>
+        <a href="../index.html#work" class="btn btn-outline-light">See more work</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.documentElement.classList.add('sr-ready');
+    const srObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('sr-in'); srObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-sr]').forEach(el => srObs.observe(el));
+  </script>
+</body>
+</html>
