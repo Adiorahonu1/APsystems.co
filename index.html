@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adiora Onuora — Conversion design and lead funnels for service businesses</title>
-  <meta name="description" content="I design and build websites that turn cold visitors into booked calls. Strategy, copy, design, and code, end to end, for advisors, agents, and founders." />
-  <meta property="og:title" content="Adiora Onuora · Conversion Design Studio" />
-  <meta property="og:description" content="High converting websites and lead funnels, built end to end by one designer." />
+  <title>Onuora @ AP Systems · Websites that win customers for small businesses</title>
+  <meta name="description" content="I build websites that turn visitors into paying customers. Planning, writing, design, and code, all by one person, for small business owners." />
+  <meta property="og:title" content="Onuora @ AP Systems · Websites that win customers" />
+  <meta property="og:description" content="Websites and sales funnels that win customers, built start to finish by one person." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -1338,6 +1338,290 @@
       100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
     }
 
+    /* ===== AI RECEPTIONIST ===== */
+    .ai {
+      background: var(--ink);
+      color: rgba(255,255,255,0.9);
+      position: relative;
+      overflow: hidden;
+    }
+    .ai::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(184,150,122,0.10), transparent 60%);
+      pointer-events: none;
+    }
+    .ai .sect-eyebrow { color: rgba(255,255,255,0.55); }
+    .ai .sect-eyebrow::before { background: rgba(255,255,255,0.30); }
+    .ai .sect-title { color: white; max-width: 920px; }
+    .ai .sect-sub { color: rgba(255,255,255,0.65); max-width: 720px; }
+    .ai__head { margin-bottom: 64px; position: relative; }
+    .ai__stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 64px;
+      position: relative;
+    }
+    .ai__stat {
+      background: var(--ink);
+      padding: 36px 32px;
+    }
+    .ai__stat-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .ai__stat-label {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .ai__stat-cite {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
+    }
+    .ai__split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+      position: relative;
+    }
+    .ai__calc,
+    .ai__demo {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 18px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+    .ai__calc-label,
+    .ai__demo-eye {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 10px;
+    }
+    .ai__demo-eye { color: var(--accent); }
+    .ai__demo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: aiPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes aiPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.45; transform: scale(1.4); }
+    }
+    .ai__calc-title,
+    .ai__demo-title {
+      font-family: var(--sans);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: white;
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+    .ai__demo-title { margin-bottom: 12px; }
+    .ai__demo-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .ai__field { margin-bottom: 22px; }
+    .ai__field-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 12px;
+    }
+    .ai__field-val {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 19px;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .ai__range {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.12);
+      outline: none;
+    }
+    .ai__range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: 2px solid var(--ink);
+      box-shadow: 0 2px 12px rgba(184,150,122,0.55);
+      transition: transform 0.15s;
+    }
+    .ai__range::-webkit-slider-thumb:hover { transform: scale(1.15); }
+    .ai__range::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--ink);
+      cursor: pointer;
+    }
+    .ai__result {
+      margin-top: auto;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .ai__result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 8px 0;
+    }
+    .ai__result-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+    }
+    .ai__result-val {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+      color: white;
+    }
+    .ai__result-val--big {
+      font-size: 42px;
+      color: var(--accent);
+    }
+    .ai__arrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      margin-bottom: 24px;
+      background: rgba(184,150,122,0.08);
+      border: 1px dashed rgba(184,150,122,0.45);
+      border-radius: 14px;
+      color: var(--accent);
+    }
+    .ai__arrow-text {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: white;
+      flex: 1;
+    }
+    .ai__arrow-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      color: var(--accent);
+      animation: aiArrowBob 1.8s ease-in-out infinite;
+    }
+    @keyframes aiArrowBob {
+      0%, 100% { transform: translate(0, 0); }
+      50%      { transform: translate(4px, 4px); }
+    }
+    @media (max-width: 640px) {
+      .ai__arrow-text { font-size: 19px; }
+      .ai__arrow-svg  { width: 44px; height: 44px; }
+    }
+    .ai__features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 18px;
+    }
+    .ai__feat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.78);
+    }
+    .ai__feat::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .ai__close {
+      margin-top: 56px;
+      padding: 36px 44px;
+      background: linear-gradient(135deg, rgba(184,150,122,0.14), rgba(184,150,122,0.04));
+      border: 1px solid rgba(184,150,122,0.28);
+      border-radius: 18px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 32px;
+    }
+    .ai__close-title {
+      font-family: var(--sans);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: white;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .ai__close-title em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .ai__close-text {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.55;
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .btn-accent:hover {
+      background: #c9a78b;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(184,150,122,0.4);
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 991px) {
       .section { padding-block: 5rem; }
@@ -1361,6 +1645,9 @@
       .about__photo-wrap { max-width: 360px; }
       .contact__grid { grid-template-columns: 1fr; }
       .footer__inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .ai__stats { grid-template-columns: 1fr; }
+      .ai__split { grid-template-columns: 1fr; }
+      .ai__close { grid-template-columns: 1fr; padding: 28px; }
     }
 
     @media (max-width: 640px) {
@@ -1385,6 +1672,9 @@
       .door { padding: 28px 22px; }
       .brief-form__row { grid-template-columns: 1fr; }
       .about__pillars { grid-template-columns: 1fr; }
+      .ai__calc, .ai__demo { padding: 28px 22px; }
+      .ai__features { grid-template-columns: 1fr; }
+      .ai__result-val--big { font-size: 32px; }
     }
   </style>
 </head>
@@ -1394,8 +1684,8 @@
   <nav class="nav" id="mainNav">
     <div class="nav__inner">
       <a href="#" class="nav__brand">
-        <img src="assets/adiora.jpeg" alt="Adiora" class="nav__brand-avatar" />
-        <div class="nav__brand-name"><b>Adiora</b> <span>Onuora</span></div>
+        <img src="assets/adiora.jpeg" alt="Onuora" class="nav__brand-avatar" />
+        <div class="nav__brand-name"><b>Onuora</b> <span>@ AP Systems</span></div>
       </a>
       <ul class="nav__links">
         <li><a href="#work" class="nav__link">Work</a></li>
@@ -1420,28 +1710,28 @@
       </p>
 
       <div class="hero__row" data-sr data-d="1">
-        <img src="assets/adiora.jpeg" alt="Adiora Onuora" class="hero__photo" />
+        <img src="assets/adiora.jpeg" alt="Onuora (Chris)" class="hero__photo" />
         <h1 class="hero__headline">
-          Hi, I'm Adiora. I design and build websites that turn cold visitors into <em>booked calls.</em>
+          Hi, I'm Onuora. I build websites that turn visitors into <em>paying customers.</em>
         </h1>
       </div>
 
       <p class="hero__sub" data-sr data-d="2">
-        Strategy, copy, design, and code, all by one person, for advisors, agents, and founders who can't afford a forgettable site.
+        I plan, write, design, and build your website myself. One person, start to finish, for any business that needs a site that actually wins customers.
       </p>
 
       <ul class="hero__bullets" data-sr data-d="3">
         <li class="hero__bullet">
           <span class="hero__bullet-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><b>6 live sites shipped</b> across insurance, solar, wealth, and nonprofit.</span>
+          <span><b>6 sites live online</b> in insurance, solar, wealth, and nonprofit.</span>
         </li>
         <li class="hero__bullet">
           <span class="hero__bullet-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span>Every site <b>hand coded</b>, mobile first, no builders, no bloat.</span>
+          <span>Every site is <b>built from scratch</b>, works great on phones, no slow templates.</span>
         </li>
         <li class="hero__bullet">
           <span class="hero__bullet-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><b>14 day average</b> from kickoff to live URL, copy included.</span>
+          <span><b>Live in 14 days on average</b>, all the writing included.</span>
         </li>
       </ul>
 
@@ -1449,14 +1739,14 @@
         <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">
           Schedule a Call <span class="btn-arrow">→</span>
         </a>
-        <a href="#work" class="btn btn-ghost">View Selected Work</a>
+        <a href="#work" class="btn btn-ghost">See My Work</a>
       </div>
     </div>
   </section>
 
   <!-- TRUSTED BY -->
   <div class="trusted">
-    <p class="trusted__label">Trusted by Founders &amp; Operators At</p>
+    <p class="trusted__label">Sites I have built for</p>
     <div class="trusted__row">
       <span class="trusted__name">Legacy The Initiative</span>
       <span class="trusted__name">Soul House</span>
@@ -1472,41 +1762,41 @@
     <div class="wrap">
       <div data-sr>
         <p class="sect-eyebrow">What I Do</p>
-        <h2 class="sect-title">Three things, done <em>obsessively.</em></h2>
-        <p class="sect-sub">Most freelancers do one of these well. The handoffs between specialists are where projects die. I run all three under one roof.</p>
+        <h2 class="sect-title">Three things, done <em>really well.</em></h2>
+        <p class="sect-sub">Most freelancers do one of these. Hiring three different people slows everything down. I do all three myself.</p>
       </div>
 
       <div class="expertise__grid" style="margin-top: 56px;">
         <div class="exp-card" data-sr>
           <div class="exp-card__num">01</div>
-          <h3 class="exp-card__title">Strategy &amp; Copy</h3>
-          <p class="exp-card__text">Positioning workshop, audience research, and conversion copy written from scratch. Every word is approved before any pixel moves.</p>
+          <h3 class="exp-card__title">Planning &amp; Writing</h3>
+          <p class="exp-card__text">I learn your business and your customers, then write every word on the site. You read it and approve it before I touch any design.</p>
           <div class="exp-card__tags">
-            <span class="exp-card__tag">Positioning</span>
-            <span class="exp-card__tag">Conversion Copy</span>
-            <span class="exp-card__tag">Voice &amp; Tone</span>
+            <span class="exp-card__tag">Planning</span>
+            <span class="exp-card__tag">Writing</span>
+            <span class="exp-card__tag">Your Voice</span>
           </div>
         </div>
 
         <div class="exp-card" data-sr data-d="1">
           <div class="exp-card__num">02</div>
-          <h3 class="exp-card__title">Conversion Design</h3>
-          <p class="exp-card__text">Every section has exactly one job. No decoration, no design committee. Mobile first, accessible, fast.</p>
+          <h3 class="exp-card__title">Design That Sells</h3>
+          <p class="exp-card__text">Every part of the page has one clear job. No fluff. Looks great on phones. Loads fast. Easy to read.</p>
           <div class="exp-card__tags">
-            <span class="exp-card__tag">UX Architecture</span>
+            <span class="exp-card__tag">Layout</span>
             <span class="exp-card__tag">Visual Design</span>
-            <span class="exp-card__tag">Design Systems</span>
+            <span class="exp-card__tag">Mobile First</span>
           </div>
         </div>
 
         <div class="exp-card" data-sr data-d="2">
           <div class="exp-card__num">03</div>
-          <h3 class="exp-card__title">End to End Build</h3>
-          <p class="exp-card__text">Hand coded HTML, CSS, and JavaScript, ready to deploy. Forms wired, calendars embedded, automations live on day one.</p>
+          <h3 class="exp-card__title">Built and Ready</h3>
+          <p class="exp-card__text">I build the actual site. Contact forms work. Booking calendar is connected. Everything is ready to go live on day one.</p>
           <div class="exp-card__tags">
-            <span class="exp-card__tag">Hand Coded</span>
-            <span class="exp-card__tag">CRM &amp; Calendly</span>
-            <span class="exp-card__tag">n8n Automation</span>
+            <span class="exp-card__tag">Built From Scratch</span>
+            <span class="exp-card__tag">Booking + Forms</span>
+            <span class="exp-card__tag">All Connected</span>
           </div>
         </div>
       </div>
@@ -1518,10 +1808,10 @@
     <div class="wrap">
       <div class="sect-head">
         <div data-sr>
-          <p class="sect-eyebrow">Selected Work</p>
+          <p class="sect-eyebrow">My Work</p>
           <h2 class="sect-title">Six live sites. <em>Five industries.</em></h2>
         </div>
-        <p class="sect-sub" data-sr data-d="1">Each tile shows the live site and what the page is built to do. Open any of them to see the work in production.</p>
+        <p class="sect-sub" data-sr data-d="1">Click any site below to see the real, live version online.</p>
       </div>
 
       <div class="work__grid">
@@ -1532,10 +1822,10 @@
           <div class="work-card__body">
             <div class="work-card__tags">
               <span class="work-card__tag">Insurance</span>
-              <span class="work-card__tag">Funnel + Quiz</span>
+              <span class="work-card__tag">Sales Site + Quiz</span>
             </div>
             <h3 class="work-card__title">Legacy The Initiative</h3>
-            <p class="work-card__outcome">A long form sales funnel for Earnie and Sharon Sears. It opens with a profile quiz that sorts each visitor into a legacy stage, walks them through story driven sections that build trust, and routes qualified prospects straight to a Calendly booking. Built to turn cold traffic into pre warmed life insurance and legacy planning consultations.</p>
+            <p class="work-card__outcome">A full sales website for Earnie and Sharon Sears. Visitors take a short quiz, see the right info for them, and book a free call. Turns strangers into ready to talk life insurance clients.</p>
             <div class="work-card__links">
               <a href="case-studies/legacy.html" class="work-card__link">View case study <span>→</span></a>
               <a href="https://www.legacycrusade.org" target="_blank" rel="noopener" class="work-card__live">Live site ↗</a>
@@ -1550,10 +1840,10 @@
           <div class="work-card__body">
             <div class="work-card__tags">
               <span class="work-card__tag">Solar</span>
-              <span class="work-card__tag">Lead Funnel</span>
+              <span class="work-card__tag">Sales Site</span>
             </div>
             <h3 class="work-card__title">Michael Edwin · Sunrun</h3>
-            <p class="work-card__outcome">A $0 down solar lead page built around a hard disqualification quiz: homeownership, roof condition, monthly electric bill. Renters and unqualified bills are filtered out before the calendar, so Michael only spends time on real Sunrun installs. Combines social proof, $0 down framing, and a tight booking flow.</p>
+            <p class="work-card__outcome">A $0 down solar page with a smart quiz. It asks if you own your home, your roof shape, and your power bill. Only real buyers can book a call, so Michael never wastes time on bad leads.</p>
             <div class="work-card__links">
               <a href="case-studies/sunrun.html" class="work-card__link">View case study <span>→</span></a>
               <a href="https://solarpagemichealedwin.netlify.app" target="_blank" rel="noopener" class="work-card__live">Live site ↗</a>
@@ -1568,10 +1858,10 @@
           <div class="work-card__body">
             <div class="work-card__tags">
               <span class="work-card__tag">Nonprofit</span>
-              <span class="work-card__tag">Multi Page</span>
+              <span class="work-card__tag">Full Site</span>
             </div>
             <h3 class="work-card__title">Prevail Movement</h3>
-            <p class="work-card__outcome">A full multi page platform for the Prevail Movement community: mission and story pages, event registration, member login, course and licensing access, and on demand donation and invoicing. Built to run the day to day operations of a growing faith based nonprofit, not just market it.</p>
+            <p class="work-card__outcome">A full website for the Prevail Movement community. Pages for their story, events, member sign ins, course access, donations, and invoices. Built to run the whole nonprofit, not just show it off.</p>
             <div class="work-card__links">
               <a href="case-studies/prevail-movement.html" class="work-card__link">View case study <span>→</span></a>
               <a href="https://prevailmovement.netlify.app" target="_blank" rel="noopener" class="work-card__live">Live site ↗</a>
@@ -1589,7 +1879,7 @@
               <span class="work-card__tag">Recruiting</span>
             </div>
             <h3 class="work-card__title">Soul House</h3>
-            <p class="work-card__outcome">A dual audience site for Elvis Okafor's S.O.U.L. team. Half of the page books families into life insurance consultations, the other half recruits new licensed agents into the team. Uses the team's signature chant, group photos, and parallel CTAs so one page serves clients and the recruiting funnel without dilution.</p>
+            <p class="work-card__outcome">One website for Elvis Okafor that does two jobs. Half books families for life insurance help. Half recruits new agents to join his team. Both work side by side without getting in each other's way.</p>
             <div class="work-card__links">
               <a href="https://soul-house.netlify.app" target="_blank" rel="noopener" class="work-card__link">View live site <span>→</span></a>
             </div>
@@ -1603,10 +1893,10 @@
           <div class="work-card__body">
             <div class="work-card__tags">
               <span class="work-card__tag">Wealth</span>
-              <span class="work-card__tag">Multi Page</span>
+              <span class="work-card__tag">Full Site</span>
             </div>
             <h3 class="work-card__title">Achievers Wealth</h3>
-            <p class="work-card__outcome">A four page wealth coaching site that introduces the advisor, walks prospects through the service stack, and pushes them into a structured intake form. Built so that by the time a visitor reaches the contact page, they have already absorbed the value, the philosophy, and the proof.</p>
+            <p class="work-card__outcome">A four page site for a wealth coach. Walks visitors through who he is, what he offers, and how to work with him. By the time they reach the contact page, they are ready to fill it out.</p>
             <div class="work-card__links">
               <a href="https://archieverswealth.netlify.app" target="_blank" rel="noopener" class="work-card__link">View live site <span>→</span></a>
             </div>
@@ -1623,7 +1913,7 @@
               <span class="work-card__tag">Foundation</span>
             </div>
             <h3 class="work-card__title">LCERMF</h3>
-            <p class="work-card__outcome">The official home of Blessing Ikejemba Moghalu's foundation. Communicates the mission, surfaces ongoing programs and initiatives, shares stories of the people served, and pushes visitors toward giving and partnership inquiries. Built to function as the foundation's credibility hub for donors, partners, and press.</p>
+            <p class="work-card__outcome">The official site for Blessing Ikejemba Moghalu's foundation. Shares the mission, shows current programs, tells stories of the people they help, and makes it easy to donate or partner with them.</p>
             <div class="work-card__links">
               <a href="https://lcermf.org" target="_blank" rel="noopener" class="work-card__link">View live site <span>→</span></a>
             </div>
@@ -1638,39 +1928,39 @@
     <div class="wrap">
       <div data-sr>
         <p class="sect-eyebrow">How We Work</p>
-        <h2 class="sect-title">Hello to launch in <em>two weeks.</em></h2>
-        <p class="sect-sub">Five clear steps. One decision per step. No three month design phases, no committees.</p>
+        <h2 class="sect-title">First call to live in <em>two weeks.</em></h2>
+        <p class="sect-sub">Five simple steps. One decision at each step. No long, drawn out projects.</p>
       </div>
 
       <div class="process__grid" style="margin-top: 56px;">
         <div class="proc-step" data-sr>
           <div class="proc-step__num">01</div>
-          <h3 class="proc-step__title">Discovery</h3>
-          <p class="proc-step__text">30 minute call. I learn your audience, offer, and where leads currently fall through.</p>
+          <h3 class="proc-step__title">First Call</h3>
+          <p class="proc-step__text">30 minute call. I learn who you sell to, what you sell, and why your site is not bringing in customers.</p>
           <span class="proc-step__time">Day 0</span>
         </div>
         <div class="proc-step" data-sr data-d="1">
           <div class="proc-step__num">02</div>
-          <h3 class="proc-step__title">Strategy &amp; Copy</h3>
-          <p class="proc-step__text">Every word written first. Hero, sections, CTAs. Approved before pixels move.</p>
+          <h3 class="proc-step__title">Writing</h3>
+          <p class="proc-step__text">I write every word for the site. You read it and approve it before I touch any design.</p>
           <span class="proc-step__time">Days 1 to 3</span>
         </div>
         <div class="proc-step" data-sr data-d="2">
           <div class="proc-step__num">03</div>
-          <h3 class="proc-step__title">Design System</h3>
-          <p class="proc-step__text">Custom tokens, type, color, three desktop mockups for key sections. You pick.</p>
+          <h3 class="proc-step__title">Design</h3>
+          <p class="proc-step__text">I create the look: colors, fonts, layout. Three options for the main parts. You pick what you like.</p>
           <span class="proc-step__time">Days 4 to 7</span>
         </div>
         <div class="proc-step" data-sr data-d="3">
           <div class="proc-step__num">04</div>
-          <h3 class="proc-step__title">Build &amp; QA</h3>
-          <p class="proc-step__text">Hand coded, mobile first. Every interaction tested on real devices before you see it.</p>
+          <h3 class="proc-step__title">Build &amp; Test</h3>
+          <p class="proc-step__text">I build the real site. I test every button and form on real phones and laptops before showing you.</p>
           <span class="proc-step__time">Days 8 to 12</span>
         </div>
         <div class="proc-step" data-sr data-d="4">
           <div class="proc-step__num">05</div>
           <h3 class="proc-step__title">Launch + 30 Days</h3>
-          <p class="proc-step__text">We ship. I tune copy and CTAs against real traffic for 30 days, included.</p>
+          <p class="proc-step__text">Site goes live. I keep adjusting the words and buttons for 30 days based on what real visitors do. Free.</p>
           <span class="proc-step__time">Days 13+</span>
         </div>
       </div>
@@ -1683,65 +1973,167 @@
       <div data-sr>
         <p class="sect-eyebrow">What I Build</p>
         <h2 class="sect-title">Three ways to <em>work together.</em></h2>
-        <p class="sect-sub">Whatever you sell, whoever you serve, one of these fits. Every package includes strategy, copy, design, build, and post launch tuning. Pricing is scoped per project after a discovery call.</p>
+        <p class="sect-sub">Whatever you sell, one of these fits. Every option includes planning, writing, design, building, and fine tuning after launch. We agree on price after the first call.</p>
       </div>
 
       <div class="pkg-grid" style="margin-top: 56px;">
         <div class="pkg" data-sr>
-          <h3 class="pkg__name">Landing Page</h3>
-          <p class="pkg__for">For any business with one product, service, event, or offer to push. Run paid or organic traffic to it.</p>
-          <div class="pkg__price-sub">10 to 14 day delivery</div>
+          <h3 class="pkg__name">One Page Site</h3>
+          <p class="pkg__for">For a business with one thing to sell or one event to promote. Run ads or social media traffic to it.</p>
+          <div class="pkg__price-sub">Ready in 10 to 14 days</div>
           <ul class="pkg__list">
-            <li>One high converting landing page</li>
-            <li>Strategy and copy by me</li>
-            <li>Custom design, hand coded</li>
-            <li>Lead, signup, or sale capture wired to your inbox</li>
-            <li>Mobile, tablet, and desktop tuned</li>
-            <li>Two rounds of revisions</li>
+            <li>One page built to win customers</li>
+            <li>All planning and writing by me</li>
+            <li>Custom design, built from scratch</li>
+            <li>Customer info sent straight to your email</li>
+            <li>Works on phones, tablets, and computers</li>
+            <li>Two rounds of changes included</li>
           </ul>
-          <a href="#contact" class="btn btn-ghost pkg__cta">Send a brief <span class="btn-arrow">→</span></a>
+          <a href="#contact" class="btn btn-ghost pkg__cta">Send a note <span class="btn-arrow">→</span></a>
         </div>
 
         <div class="pkg pkg--mid" data-sr data-d="1">
           <div class="pkg__tag">Most Popular</div>
-          <h3 class="pkg__name">Conversion Funnel</h3>
-          <p class="pkg__for">For any business that needs to turn cold traffic into bookings, signups, purchases, or qualified leads on autopilot.</p>
-          <div class="pkg__price-sub" style="color:var(--gray-2);">2 to 3 week delivery</div>
+          <h3 class="pkg__name">Full Sales Funnel</h3>
+          <p class="pkg__for">For a business that needs strangers to turn into customers without you doing it by hand.</p>
+          <div class="pkg__price-sub" style="color:var(--gray-2);">Ready in 2 to 3 weeks</div>
           <ul class="pkg__list">
-            <li>Everything in Landing Page</li>
-            <li>Interactive quiz or assessment</li>
-            <li>Multi step lead, signup, or checkout flow</li>
+            <li>Everything in One Page Site</li>
+            <li>An interactive quiz or short survey</li>
+            <li>Step by step signup or checkout</li>
             <li>Thank you and confirmation pages</li>
-            <li>Booking, payment, or CRM integration</li>
-            <li>Automated routing of every new lead or sale</li>
-            <li>30 days of post launch tuning</li>
+            <li>Booking, payments, or customer list connected</li>
+            <li>New leads and sales sorted automatically</li>
+            <li>30 days of fine tuning after launch</li>
           </ul>
           <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn pkg__cta pkg__cta-ghost-light">Book a Call <span class="btn-arrow">→</span></a>
         </div>
 
         <div class="pkg" data-sr data-d="2">
-          <h3 class="pkg__name">Brand &amp; Site System</h3>
-          <p class="pkg__for">For any business launching new, rebranding, or replacing a tired site with something that finally looks the part.</p>
-          <div class="pkg__price-sub">4 to 6 week delivery</div>
+          <h3 class="pkg__name">Brand and Full Site</h3>
+          <p class="pkg__for">For a brand new business, a rebrand, or replacing an old site that no longer fits.</p>
+          <div class="pkg__price-sub">Ready in 4 to 6 weeks</div>
           <ul class="pkg__list">
-            <li>Everything in Conversion Funnel</li>
-            <li>Full brand identity and design system</li>
-            <li>Up to 6 page multi page site</li>
-            <li>Email templates and signatures</li>
-            <li>Social profile graphics</li>
-            <li>Ongoing retainer option after launch</li>
+            <li>Everything in Full Sales Funnel</li>
+            <li>A full brand look: logo, colors, fonts, style</li>
+            <li>A site with up to 6 pages</li>
+            <li>Matching email designs and signatures</li>
+            <li>Social media profile graphics</li>
+            <li>Option to keep working together monthly after launch</li>
           </ul>
-          <a href="#contact" class="btn btn-ghost pkg__cta">Send a brief <span class="btn-arrow">→</span></a>
+          <a href="#contact" class="btn btn-ghost pkg__cta">Send a note <span class="btn-arrow">→</span></a>
         </div>
       </div>
 
       <div class="pkg-custom" data-sr>
         <div>
           <p class="pkg-custom__eyebrow">Built around you</p>
-          <h3 class="pkg-custom__title">Don't see your business in these? <em>I build custom too.</em></h3>
-          <p class="pkg-custom__text">Every project starts with a discovery call where I learn your business, your buyer, and what success looks like for you. From there I scope the work to fit your goals, your timeline, and your budget. Real estate, ecommerce, coaching, restaurants, clinics, agencies, SaaS, nonprofits, local services. If you can sell it or sign people up for it, I can build the site that does the work.</p>
+          <h3 class="pkg-custom__title">Do not see your business in these? <em>I build custom too.</em></h3>
+          <p class="pkg-custom__text">Every project starts with a free call where I learn your business, your customer, and what success looks like to you. Then I shape the work to fit your goals, timeline, and budget. Real estate, online stores, coaching, restaurants, clinics, agencies, software, nonprofits, local services. If you sell it or sign people up for it, I can build the site that does the work.</p>
         </div>
-        <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn btn-accent">Book a discovery call <span class="btn-arrow">→</span></a>
+        <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn btn-accent">Book a free call <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI RECEPTIONIST -->
+  <section class="section ai" id="ai-receptionist">
+    <div class="wrap">
+      <div class="ai__head" data-sr>
+        <p class="sect-eyebrow">New · AI Receptionist</p>
+        <h2 class="sect-title">Your phone is losing you money. <em>Every single day.</em></h2>
+        <p class="sect-sub">When you do not pick up, your competitor does. I build smart voice helpers that answer every call, learn what the caller needs, and book the appointment, day or night, in your brand voice.</p>
+      </div>
+
+      <div class="ai__stats" data-sr data-d="1">
+        <div class="ai__stat">
+          <div class="ai__stat-num">62%</div>
+          <div class="ai__stat-label">of calls to small businesses are never picked up.</div>
+          <div class="ai__stat-cite">BrightLocal, US small business study</div>
+        </div>
+        <div class="ai__stat">
+          <div class="ai__stat-num">85%</div>
+          <div class="ai__stat-label">of people who get voicemail never call back.</div>
+          <div class="ai__stat-cite">Forbes</div>
+        </div>
+        <div class="ai__stat">
+          <div class="ai__stat-num">$75K+</div>
+          <div class="ai__stat-label">the money a typical small business loses every year from missed calls.</div>
+          <div class="ai__stat-cite">Hibu Local Business Research</div>
+        </div>
+      </div>
+
+      <div class="ai__split">
+        <div class="ai__calc" data-sr>
+          <p class="ai__calc-label">The math</p>
+          <h3 class="ai__calc-title">How much is one missed call costing you?</h3>
+
+          <div class="ai__field">
+            <div class="ai__field-label">
+              <span>Calls you miss each week</span>
+              <span class="ai__field-val"><span id="aiMissed">10</span></span>
+            </div>
+            <input type="range" class="ai__range" id="aiMissedInput" min="1" max="50" value="10" />
+          </div>
+
+          <div class="ai__field">
+            <div class="ai__field-label">
+              <span>What one customer is worth to you</span>
+              <span class="ai__field-val">$<span id="aiValue">500</span></span>
+            </div>
+            <input type="range" class="ai__range" id="aiValueInput" min="50" max="5000" step="50" value="500" />
+          </div>
+
+          <div class="ai__field">
+            <div class="ai__field-label">
+              <span>Out of every 10 calls you answer, how many buy?</span>
+              <span class="ai__field-val"><span id="aiClose">25</span>%</span>
+            </div>
+            <input type="range" class="ai__range" id="aiCloseInput" min="5" max="80" value="25" />
+          </div>
+
+          <div class="ai__result">
+            <div class="ai__result-row">
+              <span class="ai__result-label">Lost every month</span>
+              <span class="ai__result-val">$<span id="aiMonth">5,417</span></span>
+            </div>
+            <div class="ai__result-row">
+              <span class="ai__result-label">Lost every year</span>
+              <span class="ai__result-val ai__result-val--big">$<span id="aiYear">65,000</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai__demo" data-sr data-d="1">
+          <p class="ai__demo-eye"><span class="ai__demo-dot"></span> Try it right now</p>
+          <h3 class="ai__demo-title">Talk to a real one.</h3>
+          <p class="ai__demo-sub">See the chat bubble at the bottom right of your screen? Tap it. Ask about pricing, ask about hours, or book a free call with me. The same kind of helper can answer your business phone, day or night.</p>
+
+          <div class="ai__arrow">
+            <span class="ai__arrow-text">Tap the bubble, bottom right</span>
+            <svg class="ai__arrow-svg" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+              <path d="M8 8 C 30 8, 55 28, 68 56" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 6"/>
+              <path d="M60 50 L 70 60 L 60 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+
+          <div class="ai__features">
+            <div class="ai__feat">Answers every call, day or night</div>
+            <div class="ai__feat">Books straight into your calendar</div>
+            <div class="ai__feat">Trained to know your business</div>
+            <div class="ai__feat">Texts you a summary after every call</div>
+            <div class="ai__feat">Picks up when you are on another call</div>
+            <div class="ai__feat">Costs less than one missed sale</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai__close" data-sr>
+        <div>
+          <h3 class="ai__close-title">Stop missing real customers. <em>I will build the helper and connect it to your phone.</em></h3>
+          <p class="ai__close-text">Voice helper, booking system, and your branding, ready in 7 to 10 days. We agree on price after the first call.</p>
+        </div>
+        <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn btn-accent">Book a free call <span class="btn-arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -1751,35 +2143,35 @@
     <div class="wrap">
       <div class="about__inner">
         <div class="about__photo-wrap" data-sr>
-          <img src="assets/adiora.jpeg" alt="Adiora Onuora" class="about__photo" />
+          <img src="assets/adiora.jpeg" alt="Onuora (Chris)" class="about__photo" />
           <div class="about__frame"></div>
           <div class="about__signature">
-            <b>Onuora Adiorah</b>
-            <span>Designer · Builder · Founder</span>
+            <b>Onuora (Chris)</b>
+            <span>Writer · Designer · Builder</span>
           </div>
         </div>
 
         <div class="about__body" data-sr data-d="1">
           <p class="sect-eyebrow" style="margin-bottom: 18px;">About Me</p>
-          <h2 class="sect-title" style="margin-bottom: 24px;">I do <em>all five jobs</em> so your project does not stall.</h2>
-          <p>Most freelancers do one thing well. A designer who can't write copy. A copywriter who can't design. A developer who needs a finished mockup before lifting a finger. The handoffs are where projects die.</p>
-          <p>I run strategy, copy, design, build, and conversion tuning under one roof at <b>AP Systems.</b> One contact. One brain holding the whole picture. One person accountable when something breaks. That is how a three week project ships in 14 days.</p>
+          <h2 class="sect-title" style="margin-bottom: 24px;">I do <em>every job</em> so your project does not get stuck.</h2>
+          <p>Most freelancers do one thing well. A designer who cannot write. A writer who cannot design. A coder who needs a finished design before they start. Projects get stuck when work has to pass between people.</p>
+          <p>I do all the planning, writing, design, building, and fine tuning myself at <b>AP Systems.</b> One person to call. One brain that holds the whole picture. One person to fix it when something breaks. That is how a three week project gets done in 14 days.</p>
           <div class="about__pillars">
             <div class="about__pillar">
-              <div class="about__pillar-title">Conversion First</div>
-              <div class="about__pillar-text">Every section has one job. Pretty pixels that don't convert are decoration.</div>
+              <div class="about__pillar-title">Built to Sell</div>
+              <div class="about__pillar-text">Every part of the page has one clear job. A pretty site that does not get customers is just decoration.</div>
             </div>
             <div class="about__pillar">
-              <div class="about__pillar-title">Hand Coded</div>
-              <div class="about__pillar-text">No bloated builders. Fast, accessible, mobile first by default.</div>
+              <div class="about__pillar-title">Built from Scratch</div>
+              <div class="about__pillar-text">No slow templates. Loads fast. Easy to use. Looks great on phones.</div>
             </div>
             <div class="about__pillar">
-              <div class="about__pillar-title">Copy Included</div>
-              <div class="about__pillar-text">I write every word. You never have to fill in Lorem Ipsum.</div>
+              <div class="about__pillar-title">Writing Included</div>
+              <div class="about__pillar-text">I write every word on the site. You never have to fill in placeholder text.</div>
             </div>
             <div class="about__pillar">
-              <div class="about__pillar-title">Wired End to End</div>
-              <div class="about__pillar-text">Lead forms, calendars, CRMs, automations. Plumbing is included.</div>
+              <div class="about__pillar-title">Fully Connected</div>
+              <div class="about__pillar-text">Forms, booking calendars, customer lists, automatic emails. All set up and working on day one.</div>
             </div>
           </div>
         </div>
@@ -1792,12 +2184,12 @@
     <div class="wrap">
       <div data-sr>
         <p class="sect-eyebrow">Client Stories</p>
-        <h2 class="sect-title">What the clients <em>actually said.</em></h2>
+        <h2 class="sect-title">What clients <em>actually said.</em></h2>
       </div>
 
       <div class="testi__grid" style="margin-top: 56px;">
         <div class="testi" data-sr>
-          <p class="testi__quote">Adiora rewrote our hero, redesigned the funnel, and shipped in two weeks. We send every cold lead to one URL now. The quiz does the rest.</p>
+          <p class="testi__quote">Onuora rewrote our main page, redesigned the whole site, and finished in two weeks. We send every new lead to one website now. The quiz does the rest.</p>
           <div class="testi__footer">
             <div class="testi__avatar">ES</div>
             <div>
@@ -1808,7 +2200,7 @@
         </div>
 
         <div class="testi" data-sr data-d="1">
-          <p class="testi__quote">I came in with a half built Sunrun page. She tore it down, added a disqualification gate, and now every call on my calendar is a real buyer.</p>
+          <p class="testi__quote">I came in with a half built Sunrun page. He started over, added a quiz that filters out tire kickers, and now every call on my calendar is a real buyer.</p>
           <div class="testi__footer">
             <div class="testi__avatar">ME</div>
             <div>
@@ -1819,7 +2211,7 @@
         </div>
 
         <div class="testi" data-sr data-d="2">
-          <p class="testi__quote">Most designers send mockups. She sends finished, working, responsive code on day 14. We launched on time, with copy that sounds like us.</p>
+          <p class="testi__quote">Most designers send pictures of a website. He sent a working, finished site on day 14. We launched on time, with words that sound like us.</p>
           <div class="testi__footer">
             <div class="testi__avatar">EO</div>
             <div>
@@ -1837,33 +2229,33 @@
     <div class="wrap-narrow">
       <div data-sr style="text-align: center; margin-bottom: 48px;">
         <p class="sect-eyebrow" style="justify-content: center;">FAQ</p>
-        <h2 class="sect-title" style="margin: 0 auto 14px;">Questions buyers <em>actually ask.</em></h2>
+        <h2 class="sect-title" style="margin: 0 auto 14px;">Questions people <em>actually ask.</em></h2>
       </div>
 
       <div class="faq__list" data-sr data-d="1">
         <details class="faq-item">
-          <summary>Why does this cost more than the freelancer on Fiverr?<span class="faq-item__icon">+</span></summary>
-          <div class="faq-item__body">Because that freelancer is selling you a template they paid $40 for. I am selling you strategy, copy, design, custom code, and 30 days of tuning. Different product, different price.</div>
+          <summary>Why does this cost more than a cheap freelancer?<span class="faq-item__icon">+</span></summary>
+          <div class="faq-item__body">A cheap freelancer is selling you a $40 template. I am selling you planning, writing, custom design, custom built code, and 30 days of fine tuning. Different thing, different price.</div>
         </details>
         <details class="faq-item">
-          <summary>How long does it actually take?<span class="faq-item__icon">+</span></summary>
-          <div class="faq-item__body">Landing page: 10 to 14 days. Conversion funnel: 2 to 3 weeks. Full site system: 4 to 6 weeks. Timelines start when copy is approved, not when the deposit clears.</div>
+          <summary>How long does it take?<span class="faq-item__icon">+</span></summary>
+          <div class="faq-item__body">One page site: 10 to 14 days. Full sales funnel: 2 to 3 weeks. Full site with brand: 4 to 6 weeks. The clock starts when you approve the writing, not when you pay.</div>
         </details>
         <details class="faq-item">
-          <summary>How many revisions do I get?<span class="faq-item__icon">+</span></summary>
-          <div class="faq-item__body">Two rounds of design revisions and unlimited copy revisions before launch. The 30 day post launch tuning window catches anything we missed.</div>
+          <summary>How many changes can I ask for?<span class="faq-item__icon">+</span></summary>
+          <div class="faq-item__body">Two rounds of design changes and unlimited writing changes before launch. The 30 days of fine tuning after launch catches anything else.</div>
         </details>
         <details class="faq-item">
           <summary>I already have a site. Can you just fix it?<span class="faq-item__icon">+</span></summary>
-          <div class="faq-item__body">Sometimes. If the bones are good, I will audit and rebuild the conversion sections. If the bones are bad, it is cheaper and faster to start fresh than to renovate.</div>
+          <div class="faq-item__body">Sometimes. If the base is solid, I will review it and rebuild just the parts that bring in customers. If the base is weak, starting over is cheaper and faster than fixing it.</div>
         </details>
         <details class="faq-item">
-          <summary>Do you do design only, or code too?<span class="faq-item__icon">+</span></summary>
-          <div class="faq-item__body">Both, by default. Every package ships as finished, hand coded HTML, CSS, and JavaScript ready to deploy. You are not buying a Figma file.</div>
+          <summary>Do you just design, or do you build it too?<span class="faq-item__icon">+</span></summary>
+          <div class="faq-item__body">Both. Every option comes as a finished, ready to launch website. You are not buying a picture, you are buying a real working site.</div>
         </details>
         <details class="faq-item">
           <summary>What happens after launch?<span class="faq-item__icon">+</span></summary>
-          <div class="faq-item__body">30 days of free tuning against real traffic. After that, optional monthly retainer for ongoing copy tests, new pages, and conversion experiments. No lock in.</div>
+          <div class="faq-item__body">30 days of free fine tuning based on real visitor data. After that, you can pay monthly for ongoing changes, new pages, and tests. No long term contract.</div>
         </details>
       </div>
     </div>
@@ -1874,40 +2266,40 @@
     <div class="wrap">
       <div class="contact__head" data-sr>
         <p class="sect-eyebrow">Get In Touch</p>
-        <h2 class="sect-title">Two open slots <em>this quarter.</em></h2>
-        <p class="sect-sub">Pick a door. Warm leads book a 30 minute call. Everyone else sends a short brief and I reply within one business day.</p>
+        <h2 class="sect-title">Two open spots <em>this quarter.</em></h2>
+        <p class="sect-sub">Pick one. If you are ready to talk, book a 30 minute call. If you have questions, send a short note and I will reply in one business day.</p>
       </div>
 
       <div class="contact__grid">
         <div class="door door--call" data-sr data-d="1">
-          <p class="door__label">Door 1 · For warm leads</p>
-          <h3 class="door__title">Book a <em>discovery call.</em></h3>
-          <p class="door__text">30 minutes. We talk audience, offer, and the gap your current site is leaving on the table. You leave with a clear next step, paid or not.</p>
+          <p class="door__label">Option 1 · Ready to talk</p>
+          <h3 class="door__title">Book a <em>free call.</em></h3>
+          <p class="door__text">30 minutes. We talk about your customers, what you sell, and what your current site is missing. You leave with a clear next step, whether you hire me or not.</p>
           <ul class="door__list">
-            <li>Free, no pitch, no slides</li>
-            <li>You walk away with a written next step</li>
-            <li>If we are not a fit, I will tell you</li>
+            <li>Free. No sales pitch.</li>
+            <li>You leave with a clear next step in writing</li>
+            <li>If we are not a good match, I will say so</li>
           </ul>
           <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="door__btn door__btn--primary">
-            Schedule a Call <span class="btn-arrow">→</span>
+            Book a Call <span class="btn-arrow">→</span>
           </a>
-          <p class="door__note">No commitment. No sales pressure.</p>
+          <p class="door__note">No pressure. No commitment.</p>
         </div>
 
         <div class="door" data-sr data-d="2">
-          <p class="door__label">Door 2 · Send a brief</p>
-          <h3 class="door__title">Tell me about <em>the project.</em></h3>
-          <p class="door__text">Short form. Five fields. I reply within one business day with whether I am the right fit, a price range, and a proposed timeline.</p>
+          <p class="door__label">Option 2 · Send a note</p>
+          <h3 class="door__title">Tell me about <em>your project.</em></h3>
+          <p class="door__text">Short form. Five fields. I reply in one business day with whether I am the right person, a price range, and how long it would take.</p>
           <form class="brief-form" onsubmit="handleBrief(event)">
             <div class="brief-form__row">
               <input type="text" name="name" placeholder="Your name" required />
               <input type="email" name="email" placeholder="Email" required />
             </div>
             <select name="project" required>
-              <option value="">Project type</option>
-              <option>Landing page</option>
-              <option>Conversion funnel</option>
-              <option>Brand &amp; site system</option>
+              <option value="">What you need</option>
+              <option>One page site</option>
+              <option>Full sales funnel</option>
+              <option>Brand and full site</option>
               <option>Not sure yet</option>
             </select>
             <select name="budget" required>
@@ -1917,8 +2309,8 @@
               <option>$10k+</option>
               <option>Not sure yet</option>
             </select>
-            <textarea name="message" placeholder="One paragraph: what are you building and what does success look like?"></textarea>
-            <button type="submit" class="door__btn door__btn--dark">Send the Brief <span class="btn-arrow">→</span></button>
+            <textarea name="message" placeholder="In a few sentences: what are you building and what would success look like?"></textarea>
+            <button type="submit" class="door__btn door__btn--dark">Send the Note <span class="btn-arrow">→</span></button>
           </form>
         </div>
       </div>
@@ -1931,10 +2323,10 @@
       <div class="footer__inner">
         <div>
           <div class="footer__brand">
-            <img src="assets/adiora.jpeg" alt="Adiora" class="nav__brand-avatar" style="width:34px;height:34px;" />
-            Adiora Onuora
+            <img src="assets/adiora.jpeg" alt="Onuora" class="nav__brand-avatar" style="width:34px;height:34px;" />
+            Onuora @ AP Systems
           </div>
-          <p class="footer__tagline">Conversion design and lead funnels for advisors, agents, and founders. Built by one person, the right way, the first time.</p>
+          <p class="footer__tagline">Websites and sales funnels that win customers. Built by one person, the right way, the first time.</p>
           <div class="footer__social">
             <a href="https://www.linkedin.com/in/adiorahonuora-security-eng/" target="_blank" rel="noopener" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -1947,11 +2339,11 @@
         <div>
           <p class="footer__col-label">Explore</p>
           <ul class="footer__links">
-            <li><a href="#work">Selected Work</a></li>
-            <li><a href="#expertise">Services</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#packages">Packages</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#work">My Work</a></li>
+            <li><a href="#expertise">What I Do</a></li>
+            <li><a href="#process">How We Work</a></li>
+            <li><a href="#packages">What I Build</a></li>
+            <li><a href="#about">About Me</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
@@ -1973,7 +2365,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2026 Adiora Onuora · AP Systems. All work shown built by me.</p>
+        <p>© 2026 Onuora (Chris) · AP Systems. All work shown built by me.</p>
         <p><em>Made by hand, in 2026.</em></p>
       </div>
     </div>
@@ -2011,6 +2403,37 @@
         btn.style.background = '';
       }, 4000);
     }
+
+    // AI RECEPTIONIST — missed call calculator
+    (function(){
+      const missed = document.getElementById('aiMissedInput');
+      const value  = document.getElementById('aiValueInput');
+      const close  = document.getElementById('aiCloseInput');
+      if (!missed) return;
+      const missedOut = document.getElementById('aiMissed');
+      const valueOut  = document.getElementById('aiValue');
+      const closeOut  = document.getElementById('aiClose');
+      const monthOut  = document.getElementById('aiMonth');
+      const yearOut   = document.getElementById('aiYear');
+      const fmt = n => Math.round(n).toLocaleString('en-US');
+      function recalc(){
+        const m = +missed.value;
+        const v = +value.value;
+        const c = +close.value / 100;
+        missedOut.textContent = m;
+        valueOut.textContent  = fmt(v);
+        closeOut.textContent  = +close.value;
+        const monthly = m * 4.33 * c * v;
+        monthOut.textContent = fmt(monthly);
+        yearOut.textContent  = fmt(monthly * 12);
+      }
+      [missed, value, close].forEach(el => el.addEventListener('input', recalc));
+      recalc();
+    })();
   </script>
+
+  <!-- Floating AI receptionist (global, lives bottom-right) -->
+  <elevenlabs-convai agent-id="agent_5701krdep4ftfdrvmj24xhv9gx1m"></elevenlabs-convai>
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 </body>
 </html>
