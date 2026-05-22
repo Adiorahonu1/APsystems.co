@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Onuora @ AP Systems · Websites that win customers for small businesses</title>
-  <meta name="description" content="I build websites that turn visitors into paying customers. Planning, writing, design, and code, all by one person, for small business owners." />
-  <meta property="og:title" content="Onuora @ AP Systems · Websites that win customers" />
-  <meta property="og:description" content="Websites and sales funnels that win customers, built start to finish by one person." />
+  <title>Onuora @ AP Systems · Websites, automation, and AI voice for small business</title>
+  <meta name="description" content="More booked calls, less busywork, and a phone that never rings out. I build websites, automation, and AI receptionists for service businesses that want to grow without hiring." />
+  <meta property="og:title" content="Onuora @ AP Systems · Websites, automation, and AI voice" />
+  <meta property="og:description" content="One operator builds the site, the systems behind it, and the AI that answers the phone. Live in two weeks, supported for thirty days." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -1676,6 +1676,152 @@
       .ai__features { grid-template-columns: 1fr; }
       .ai__result-val--big { font-size: 32px; }
     }
+
+    /* ===== SCENE (3D operator moment) ===== */
+    .scene {
+      position: relative;
+      padding-block: 6rem;
+      background: var(--bg);
+      overflow: hidden;
+    }
+    .scene__card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      min-height: 540px;
+      isolation: isolate;
+      box-shadow: 0 30px 80px -40px rgba(19,19,19,0.18);
+    }
+    .scene__card::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: -15%;
+      width: 65%;
+      height: 140%;
+      background: radial-gradient(ellipse at center, rgba(184,150,122,0.28), rgba(184,150,122,0) 65%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .scene__content {
+      position: relative;
+      z-index: 2;
+      padding: 64px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 22px;
+    }
+    .scene__eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .scene__title {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 4.4vw, 3.4rem);
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .scene__title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .scene__sub {
+      font-size: 1.04rem;
+      line-height: 1.6;
+      color: var(--ink-2);
+      max-width: 460px;
+    }
+    .scene__hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: var(--ink-2);
+      opacity: 0.78;
+      margin-top: 8px;
+    }
+    .scene__hint-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(184,150,122,0.6);
+      animation: scene-pulse 2s var(--ease) infinite;
+    }
+    @keyframes scene-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(184,150,122,0.5); }
+      50% { box-shadow: 0 0 0 8px rgba(184,150,122,0); }
+    }
+    .scene__viewer {
+      position: relative;
+      z-index: 1;
+      margin: 18px 18px 18px 0;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 504px;
+      background: linear-gradient(140deg, #1a1a1a 0%, #0d0d0d 100%);
+    }
+    .scene__viewer spline-viewer {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+    .scene__loader {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.84rem;
+      letter-spacing: 0.04em;
+      z-index: 1;
+    }
+    .scene__loader-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: scene-pulse 1.6s var(--ease) infinite;
+    }
+
+    @media (max-width: 900px) {
+      .scene { padding-block: 4rem; }
+      .scene__card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .scene__content { padding: 44px 32px 28px; }
+      .scene__viewer {
+        margin: 0 18px 18px;
+        min-height: 380px;
+      }
+    }
+    @media (max-width: 480px) {
+      .scene { padding-block: 3.2rem; }
+      .scene__card { border-radius: 22px; }
+      .scene__content { padding: 36px 22px 24px; gap: 16px; }
+      .scene__viewer {
+        margin: 0 14px 14px;
+        min-height: 320px;
+        border-radius: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1712,34 +1858,34 @@
       <div class="hero__row" data-sr data-d="1">
         <img src="assets/adiora.jpeg" alt="Onuora (Chris)" class="hero__photo" />
         <h1 class="hero__headline">
-          Hi, I'm Onuora. I build websites that turn visitors into <em>paying customers.</em>
+          Your site loses leads, your inbox eats your evenings, and your phone misses customers. <em>I fix all three.</em>
         </h1>
       </div>
 
       <p class="hero__sub" data-sr data-d="2">
-        I plan, write, design, and build your website myself. One person, start to finish, for any business that needs a site that actually wins customers.
+        I build the website, the systems behind it, and the AI that answers the phone. One operator, one connected stack, for service businesses that want to grow without hiring.
       </p>
 
       <ul class="hero__bullets" data-sr data-d="3">
         <li class="hero__bullet">
           <span class="hero__bullet-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><b>6 sites live online</b> in insurance, solar, wealth, and nonprofit.</span>
+          <span><b>More booked calls</b> from the same traffic you already pay for.</span>
         </li>
         <li class="hero__bullet">
           <span class="hero__bullet-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span>Every site is <b>built from scratch</b>, works great on phones, no slow templates.</span>
+          <span><b>Hours back every week</b> as software runs the follow ups, proposals, and busywork.</span>
         </li>
         <li class="hero__bullet">
           <span class="hero__bullet-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><b>Live in 14 days on average</b>, all the writing included.</span>
+          <span><b>Every call answered</b>, even at 2am, even on Christmas. Booked before they hang up.</span>
         </li>
       </ul>
 
       <div class="hero__actions" data-sr data-d="4">
         <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">
-          Schedule a Call <span class="btn-arrow">→</span>
+          Book a Free 20 Min Call <span class="btn-arrow">→</span>
         </a>
-        <a href="#work" class="btn btn-ghost">See My Work</a>
+        <a href="#ai-receptionist" class="btn btn-ghost">Hear the AI Pick Up</a>
       </div>
     </div>
   </section>
@@ -1757,46 +1903,74 @@
     </div>
   </div>
 
+  <!-- SCENE / OPERATOR MOMENT -->
+  <section class="scene" id="scene">
+    <div class="wrap">
+      <div class="scene__card" data-sr>
+        <div class="scene__content">
+          <p class="scene__eyebrow">One Operator · Full Stack</p>
+          <h2 class="scene__title">Three problems. <em>One operator.</em></h2>
+          <p class="scene__sub">Your website, your automation, and your AI receptionist, wired by the same person. The polish you see here is the polish your system gets.</p>
+          <span class="scene__hint">
+            <span class="scene__hint-dot"></span>
+            Drag the scene to interact
+          </span>
+        </div>
+        <div class="scene__viewer">
+          <div class="scene__loader">
+            <span class="scene__loader-dot"></span>
+            Loading scene
+          </div>
+          <spline-viewer
+            url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+            loading-anim-type="none"
+            events-target="local"
+          ></spline-viewer>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EXPERTISE -->
   <section class="section" id="expertise">
     <div class="wrap">
       <div data-sr>
-        <p class="sect-eyebrow">What I Do</p>
-        <h2 class="sect-title">Three things, done <em>really well.</em></h2>
-        <p class="sect-sub">Most freelancers do one of these. Hiring three different people slows everything down. I do all three myself.</p>
+        <p class="sect-eyebrow">What You Get</p>
+        <h2 class="sect-title">Three problems. <em>Solved end to end.</em></h2>
+        <p class="sect-sub">Most owners hire a web designer, a VA, and a receptionist, and stitch the gaps themselves. I replace all three with one connected system, built by one operator.</p>
       </div>
 
       <div class="expertise__grid" style="margin-top: 56px;">
         <div class="exp-card" data-sr>
           <div class="exp-card__num">01</div>
-          <h3 class="exp-card__title">Planning &amp; Writing</h3>
-          <p class="exp-card__text">I learn your business and your customers, then write every word on the site. You read it and approve it before I touch any design.</p>
+          <h3 class="exp-card__title">More Booked Calls</h3>
+          <p class="exp-card__text">Your traffic doesn't book because your site loses 7 of 10 visitors in 5 seconds. I write, design, and build a site where every section has one job: get the next click. You stop paying for traffic that bounces.</p>
           <div class="exp-card__tags">
-            <span class="exp-card__tag">Planning</span>
-            <span class="exp-card__tag">Writing</span>
-            <span class="exp-card__tag">Your Voice</span>
+            <span class="exp-card__tag">Website &amp; Funnel</span>
+            <span class="exp-card__tag">Mobile First</span>
+            <span class="exp-card__tag">Live in 2 Weeks</span>
           </div>
         </div>
 
         <div class="exp-card" data-sr data-d="1">
           <div class="exp-card__num">02</div>
-          <h3 class="exp-card__title">Design That Sells</h3>
-          <p class="exp-card__text">Every part of the page has one clear job. No fluff. Looks great on phones. Loads fast. Easy to read.</p>
+          <h3 class="exp-card__title">Hours Back Every Week</h3>
+          <p class="exp-card__text">You spend 11 hours a week on follow ups, proposals, and copy paste work. Software can do it in seconds, around the clock. Leads get a reply in 5 minutes, not 5 days, and you get your evenings back.</p>
           <div class="exp-card__tags">
-            <span class="exp-card__tag">Layout</span>
-            <span class="exp-card__tag">Visual Design</span>
-            <span class="exp-card__tag">Mobile First</span>
+            <span class="exp-card__tag">AI Automation</span>
+            <span class="exp-card__tag">CRM &amp; Inbox</span>
+            <span class="exp-card__tag">Always On</span>
           </div>
         </div>
 
         <div class="exp-card" data-sr data-d="2">
           <div class="exp-card__num">03</div>
-          <h3 class="exp-card__title">Built and Ready</h3>
-          <p class="exp-card__text">I build the actual site. Contact forms work. Booking calendar is connected. Everything is ready to go live on day one.</p>
+          <h3 class="exp-card__title">Every Call Answered</h3>
+          <p class="exp-card__text">Small businesses miss 27% of calls. Each one is a customer who hired someone else. A voice agent trained on your business picks up in 2 rings, qualifies the caller, and books the appointment before they hang up.</p>
           <div class="exp-card__tags">
-            <span class="exp-card__tag">Built From Scratch</span>
-            <span class="exp-card__tag">Booking + Forms</span>
-            <span class="exp-card__tag">All Connected</span>
+            <span class="exp-card__tag">AI Receptionist</span>
+            <span class="exp-card__tag">24/7 Coverage</span>
+            <span class="exp-card__tag">Books on the Call</span>
           </div>
         </div>
       </div>
@@ -1971,55 +2145,56 @@
   <section class="section" id="packages">
     <div class="wrap">
       <div data-sr>
-        <p class="sect-eyebrow">What I Build</p>
-        <h2 class="sect-title">Three ways to <em>work together.</em></h2>
-        <p class="sect-sub">Whatever you sell, one of these fits. Every option includes planning, writing, design, building, and fine tuning after launch. We agree on price after the first call.</p>
+        <p class="sect-eyebrow">Pick Your Outcome</p>
+        <h2 class="sect-title">Three levels of <em>getting your time back.</em></h2>
+        <p class="sect-sub">Each tier takes more off your plate than the last. Start where you are now, grow into the next one when you are ready. Final price is set after a free 20 minute call.</p>
       </div>
 
       <div class="pkg-grid" style="margin-top: 56px;">
         <div class="pkg" data-sr>
-          <h3 class="pkg__name">One Page Site</h3>
-          <p class="pkg__for">For a business with one thing to sell or one event to promote. Run ads or social media traffic to it.</p>
-          <div class="pkg__price-sub">Ready in 10 to 14 days</div>
+          <h3 class="pkg__name">Get Found</h3>
+          <p class="pkg__for">For owners who want their ad clicks and Google traffic to start turning into booked calls instead of bouncing.</p>
+          <div class="pkg__price-sub">Live in 10 to 14 days</div>
           <ul class="pkg__list">
-            <li>One page built to win customers</li>
-            <li>All planning and writing by me</li>
-            <li>Custom design, built from scratch</li>
-            <li>Customer info sent straight to your email</li>
-            <li>Works on phones, tablets, and computers</li>
+            <li>A landing page built to convert, not just look pretty</li>
+            <li>Every word written for your customer, by me</li>
+            <li>Custom design, fast on phones, fast on Google</li>
+            <li>Booking calendar and lead form wired up</li>
             <li>Two rounds of changes included</li>
+            <li>You stop paying for traffic that walks away</li>
           </ul>
           <a href="#contact" class="btn btn-ghost pkg__cta">Send a note <span class="btn-arrow">→</span></a>
         </div>
 
         <div class="pkg pkg--mid" data-sr data-d="1">
           <div class="pkg__tag">Most Popular</div>
-          <h3 class="pkg__name">Full Sales Funnel</h3>
-          <p class="pkg__for">For a business that needs strangers to turn into customers without you doing it by hand.</p>
-          <div class="pkg__price-sub" style="color:var(--gray-2);">Ready in 2 to 3 weeks</div>
+          <h3 class="pkg__name">Get Booked</h3>
+          <p class="pkg__for">For owners losing leads in the gap between someone visiting the site and actually being followed up with.</p>
+          <div class="pkg__price-sub" style="color:var(--gray-2);">Live in 2 to 3 weeks</div>
           <ul class="pkg__list">
-            <li>Everything in One Page Site</li>
-            <li>An interactive quiz or short survey</li>
-            <li>Step by step signup or checkout</li>
-            <li>Thank you and confirmation pages</li>
-            <li>Booking, payments, or customer list connected</li>
-            <li>New leads and sales sorted automatically</li>
+            <li>Everything in Get Found</li>
+            <li>An interactive quiz or survey to qualify leads on the spot</li>
+            <li>Automatic follow up in 5 minutes, not 5 days</li>
+            <li>Proposals and confirmations sent without you lifting a finger</li>
+            <li>Booking, payments, and CRM connected end to end</li>
             <li>30 days of fine tuning after launch</li>
+            <li>You stop losing leads to slow replies</li>
           </ul>
           <a href="https://calendly.com/adiorahonuora/new-meeting" target="_blank" rel="noopener" class="btn pkg__cta pkg__cta-ghost-light">Book a Call <span class="btn-arrow">→</span></a>
         </div>
 
         <div class="pkg" data-sr data-d="2">
-          <h3 class="pkg__name">Brand and Full Site</h3>
-          <p class="pkg__for">For a brand new business, a rebrand, or replacing an old site that no longer fits.</p>
-          <div class="pkg__price-sub">Ready in 4 to 6 weeks</div>
+          <h3 class="pkg__name">Get Running</h3>
+          <p class="pkg__for">For owners who want the website, the automation, and an AI receptionist working together so the business runs between calls.</p>
+          <div class="pkg__price-sub">Live in 4 to 6 weeks</div>
           <ul class="pkg__list">
-            <li>Everything in Full Sales Funnel</li>
-            <li>A full brand look: logo, colors, fonts, style</li>
-            <li>A site with up to 6 pages</li>
-            <li>Matching email designs and signatures</li>
-            <li>Social media profile graphics</li>
-            <li>Option to keep working together monthly after launch</li>
+            <li>Everything in Get Booked</li>
+            <li>AI receptionist that answers every call, day or night</li>
+            <li>Voice agent trained to qualify and book on the call</li>
+            <li>SMS follow up sent the moment the call ends</li>
+            <li>Full brand kit: logo, colors, fonts, style</li>
+            <li>Up to 6 page site, matching emails, social graphics</li>
+            <li>Option to keep me on retainer monthly after launch</li>
           </ul>
           <a href="#contact" class="btn btn-ghost pkg__cta">Send a note <span class="btn-arrow">→</span></a>
         </div>
@@ -2435,5 +2610,8 @@
   <!-- Floating AI receptionist (global, lives bottom-right) -->
   <elevenlabs-convai agent-id="agent_5701krdep4ftfdrvmj24xhv9gx1m"></elevenlabs-convai>
   <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+  <!-- Spline viewer (3D scene under hero) -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.48/build/spline-viewer.js"></script>
 </body>
 </html>
